@@ -1,1 +1,820 @@
+/* =========================================================
+   CHALLENGERS — CLASS PAGE
+   assets/class.css
+   ========================================================= */
 
+
+/* ---------- RESET ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: #16213b;
+
+    background:
+        radial-gradient(
+            circle at 95% 20%,
+            rgba(64, 210, 229, 0.15),
+            transparent 28%
+        ),
+        #f5f7fb;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 300px;
+
+    padding:
+        52px
+        24px
+        100px;
+
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(
+            115deg,
+            #4427a8 0%,
+            #5841d9 45%,
+            #25a9bb 100%
+        );
+}
+
+
+/* декоративен кръг вдясно */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    right: -180px;
+    bottom: -360px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    pointer-events: none;
+}
+
+
+/* ---------- Заглавие ---------- */
+
+.hero h1 {
+    position: relative;
+    z-index: 1;
+
+    margin:
+        0
+        auto
+        12px;
+
+    font-size:
+        clamp(
+            44px,
+            7vw,
+            78px
+        );
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+}
+
+
+/* ---------- Подзаглавие ---------- */
+
+.hero > p {
+    position: relative;
+    z-index: 1;
+
+    max-width: 760px;
+
+    margin:
+        0
+        auto;
+
+    font-size: 19px;
+    line-height: 1.55;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.92
+        );
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.progress-wrap {
+    position: relative;
+    z-index: 1;
+
+    max-width: 475px;
+
+    margin:
+        34px
+        auto
+        0;
+}
+
+
+.progress-text {
+    margin-bottom: 11px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.95
+        );
+}
+
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.25
+        );
+}
+
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c9b8ff,
+            #62e4ef
+        );
+
+    transition:
+        width
+        0.35s
+        ease;
+}
+
+
+/* ---------- Back link ---------- */
+
+.back {
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        );
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        opacity
+        0.2s ease;
+}
+
+
+.back:hover {
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.timeline {
+    position: relative;
+    z-index: 2;
+
+    width: min(
+        100% - 32px,
+        980px
+    );
+
+    margin:
+        -45px
+        auto
+        80px;
+}
+
+
+/* =========================================================
+   LESSON
+   ========================================================= */
+
+.lesson {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        70px
+        minmax(
+            0,
+            1fr
+        );
+
+    gap: 0 18px;
+}
+
+
+/* ---------- Timeline vertical line ---------- */
+
+.lesson:not(:last-child)::before {
+    content: "";
+
+    position: absolute;
+
+    top: 77px;
+    bottom: -3px;
+    left: 26px;
+
+    width: 4px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            #bbb7ff,
+            #b9dcff
+        );
+}
+
+
+/* =========================================================
+   LESSON NUMBER
+   ========================================================= */
+
+.number {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 52px;
+
+    margin-top: 30px;
+
+    border:
+        2px
+        solid
+        #b99aff;
+
+    border-radius: 15px;
+
+    background: white;
+
+    color: #553bd8;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    box-shadow:
+        0 7px 18px
+        rgba(
+            84,
+            64,
+            190,
+            0.12
+        );
+}
+
+
+/* =========================================================
+   LESSON CARD
+   ========================================================= */
+
+.card {
+    position: relative;
+
+    margin-bottom: 22px;
+
+    padding:
+        30px
+        32px
+        26px;
+
+    border:
+        1px
+        solid
+        rgba(
+            100,
+            120,
+            170,
+            0.1
+        );
+
+    border-radius: 25px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.96
+        );
+
+    box-shadow:
+        0
+        17px
+        42px
+        rgba(
+            30,
+            46,
+            80,
+            0.10
+        );
+
+    transition:
+        transform
+        0.2s ease,
+        box-shadow
+        0.2s ease;
+}
+
+
+.card:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0
+        20px
+        50px
+        rgba(
+            30,
+            46,
+            80,
+            0.14
+        );
+}
+
+
+/* ---------- Date ---------- */
+
+.date {
+    margin-bottom: 7px;
+
+    color: #73809a;
+
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+/* ---------- Lesson title ---------- */
+
+.card h2 {
+    margin:
+        0
+        0
+        18px;
+
+    color: #15203a;
+
+    font-size:
+        clamp(
+            22px,
+            3vw,
+            29px
+        );
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   RESOURCES
+   ========================================================= */
+
+.resources {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+/* ---------- Whole pill ---------- */
+
+.resource {
+    --resource-color: #5b43df;
+
+    display: inline-flex;
+
+    align-items: stretch;
+
+    min-height: 47px;
+
+    overflow: hidden;
+
+    border:
+        1.8px
+        solid
+        var(--resource-color);
+
+    border-radius: 999px;
+
+    background: white;
+
+    color:
+        var(--resource-color);
+
+    transition:
+        transform
+        0.15s ease,
+        box-shadow
+        0.15s ease;
+}
+
+
+.resource:hover {
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0
+        6px
+        15px
+        rgba(
+            20,
+            30,
+            60,
+            0.08
+        );
+}
+
+
+/* ---------- Link side ---------- */
+
+.resource a {
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        10px
+        17px;
+
+    color:
+        inherit;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.done {
+    appearance: none;
+    -webkit-appearance: none;
+
+    position: relative;
+
+    width: 44px;
+
+    margin: 0;
+
+    border: 0;
+    border-left:
+        1.5px
+        solid
+        var(--resource-color);
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color:
+        var(--resource-color);
+
+    transition:
+        background
+        0.15s ease;
+}
+
+
+/* check symbol */
+
+.done::before {
+    content: "✓";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+    font-weight: 900;
+
+    opacity: 0.23;
+
+    transition:
+        opacity
+        0.15s ease,
+        color
+        0.15s ease;
+}
+
+
+/* checked */
+
+.done:checked {
+    background:
+        var(--resource-color);
+}
+
+
+.done:checked::before {
+    color: white;
+    opacity: 1;
+}
+
+
+/* =========================================================
+   RESOURCE COLORS
+   ========================================================= */
+
+.resource.purple {
+    --resource-color: #5c3ee1;
+}
+
+
+.resource.orange {
+    --resource-color: #ff7624;
+}
+
+
+.resource.blue {
+    --resource-color: #21a8c0;
+}
+
+
+.resource.green {
+    --resource-color: #25a86b;
+}
+
+
+.resource.red {
+    --resource-color: #e84b5f;
+}
+
+
+/* =========================================================
+   COMPLETED RESOURCE
+   ========================================================= */
+
+.resource:has(.done:checked) {
+    background:
+        color-mix(
+            in srgb,
+            var(--resource-color) 7%,
+            white
+        );
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding:
+            42px
+            18px
+            85px;
+    }
+
+
+    .hero h1 {
+        font-size: 44px;
+        letter-spacing: -1px;
+    }
+
+
+    .hero > p {
+        font-size: 16px;
+    }
+
+
+    .progress-wrap {
+        max-width: 90%;
+    }
+
+
+    .timeline {
+        width:
+            calc(
+                100% - 20px
+            );
+
+        margin-top: -35px;
+    }
+
+
+    .lesson {
+        grid-template-columns:
+            48px
+            minmax(
+                0,
+                1fr
+            );
+
+        gap: 10px;
+    }
+
+
+    .number {
+        width: 43px;
+        height: 43px;
+
+        margin-top: 24px;
+
+        border-radius: 12px;
+
+        font-size: 14px;
+    }
+
+
+    .lesson:not(:last-child)::before {
+        left: 20px;
+
+        top: 67px;
+
+        width: 3px;
+    }
+
+
+    .card {
+        padding:
+            24px
+            18px
+            22px;
+
+        border-radius: 20px;
+    }
+
+
+    .date {
+        font-size: 14px;
+    }
+
+
+    .card h2 {
+        font-size: 22px;
+    }
+
+
+    .resources {
+        gap: 8px;
+    }
+
+
+    .resource {
+        min-height: 43px;
+    }
+
+
+    .resource a {
+        padding:
+            9px
+            13px;
+
+        font-size: 14px;
+    }
+
+
+    .done {
+        width: 40px;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .lesson {
+        grid-template-columns:
+            42px
+            minmax(
+                0,
+                1fr
+            );
+
+        gap: 7px;
+    }
+
+
+    .number {
+        width: 38px;
+        height: 38px;
+
+        font-size: 12px;
+    }
+
+
+    .lesson:not(:last-child)::before {
+        left: 18px;
+    }
+
+
+    .card {
+        padding:
+            20px
+            14px;
+    }
+
+
+    .resource a {
+        padding:
+            8px
+            11px;
+    }
+
+}
