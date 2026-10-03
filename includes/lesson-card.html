@@ -1,1 +1,41 @@
+<section class="lesson">
 
+    <div class="number">
+        {{ include.lesson.number }}
+    </div>
+
+    <div class="card">
+
+        <div class="date">
+            {{ include.lesson.date }}
+        </div>
+
+        <h2>
+            {{ include.lesson.title }}
+        </h2>
+
+        <div class="resources">
+
+            {% for resource in include.lesson.resources %}
+
+            <div class="resource {{ resource.color }}">
+
+                <a href="{{ resource.href }}">
+                    ● {{ resource.label }}
+                </a>
+
+                <input
+                    class="done"
+                    type="checkbox"
+                    id="{{ resource.id }}"
+                >
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
