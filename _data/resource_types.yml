@@ -1,0 +1,19 @@
+theory:
+  label: "Теория"
+  color: "purple"
+
+tasks:
+  label: "Задачи"
+  color: "orange"
+
+interactive:
+  label: "Интерактивно"
+  color: "blue"
+
+homework:
+  label: "Домашно"
+  color: "green"
+
+contest:
+  label: "Състезание"
+  color: "red"
