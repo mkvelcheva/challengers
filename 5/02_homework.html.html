@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Школа 5. клас — домашна работа, седмица 2</title>
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+            color: #182639;
+            background: #f4f7fb
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0
+        }
+
+        .wrap {
+            max-width: 940px;
+            margin: auto;
+            padding: 34px 20px 80px
+        }
+
+        header {
+            background: #16355d;
+            color: white;
+            border-radius: 19px;
+            padding: 34px 38px;
+            margin-bottom: 32px
+        }
+
+        h1 {
+            font-size: 2.15rem;
+            line-height: 1.15;
+            margin: 0 0 9px
+        }
+
+        header p {
+            margin: 0;
+            color: #daebff;
+            line-height: 1.5
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        nav a {
+            font-size: .9rem;
+            color: #e8f5ff;
+            text-decoration: none;
+            border: 1px solid #7eabc9;
+            border-radius: 99px;
+            padding: 7px 13px
+        }
+
+        nav a:hover {
+            background: #34577c
+        }
+
+        section {
+            margin: 34px 0 42px
+        }
+
+        h2 {
+            color: #173c68;
+            font-size: 1.55rem;
+            margin: 0 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #c8d9ee
+        }
+
+        h3 {
+            font-size: 1.17rem;
+            margin: 0 0 11px;
+            color: #163b66
+        }
+
+        .intro,
+        .explain {
+            line-height: 1.62;
+            font-size: 1.04rem
+        }
+
+        .explain {
+            background: #e8f1fc;
+            border-left: 4px solid #477db4;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0 22px
+        }
+
+        .explain p {
+            margin: 0 0 10px
+        }
+
+        .explain p:last-child {
+            margin-bottom: 0
+        }
+
+        .explain ul {
+            margin: 8px 0 0;
+            padding-left: 23px
+        }
+
+        .task {
+            background: white;
+            border: 1px solid #dbe4ef;
+            border-radius: 14px;
+            padding: 21px 24px;
+            margin: 12px 0;
+            break-inside: avoid
+        }
+
+        .condition {
+            white-space: pre-wrap;
+            line-height: 1.54;
+            font-size: 1.01rem
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            background: #f0f4fa;
+            border-radius: 4px;
+            padding: 1px 5px
+        }
+
+        pre {
+            background: #142b46;
+            color: #eef7ff;
+            padding: 13px 17px;
+            border-radius: 9px;
+            overflow: auto;
+            margin: 12px 0 2px;
+            line-height: 1.55
+        }
+
+        pre code {
+            background: none;
+            padding: 0
+        }
+
+        .callout {
+            border-radius: 11px;
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            padding: 14px 18px;
+            line-height: 1.5;
+            margin: 20px 0
+        }
+
+        @media print {
+            body {
+                background: white
+            }
+
+            .wrap {
+                max-width: none;
+                padding: 0
+            }
+
+            header {
+                background: white;
+                color: #173c68;
+                border-radius: 0;
+                border-bottom: 2px solid #173c68;
+                padding: 0 0 16px;
+                margin-bottom: 25px
+            }
+
+            header p {
+                color: #333
+            }
+
+            nav {
+                display: none
+            }
+
+            section {
+                margin: 25px 0
+            }
+
+            h2 {
+                break-after: avoid
+            }
+
+            .task {
+                padding: 15px 18px;
+                margin: 9px 0
+            }
+
+            pre {
+                background: #f1f5fa;
+                color: #111;
+                white-space: pre-wrap
+            }
+        }
+
+        .solution {
+            margin-top: 18px;
+            border-top: 1px solid #dbe4ef;
+            padding-top: 12px
+        }
+
+        .solution summary {
+            cursor: pointer;
+            display: inline-block;
+            list-style: none;
+            background: #e8f1fc;
+            color: #163b66;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 9px 14px;
+            user-select: none
+        }
+
+        .solution summary::-webkit-details-marker {
+            display: none
+        }
+
+        .solution summary::before {
+            content: '▸';
+            display: inline-block;
+            margin-right: 9px;
+            transition: transform .2s
+        }
+
+        .solution[open] summary::before {
+            transform: rotate(90deg)
+        }
+
+        .solution summary:hover,
+        .solution summary:focus-visible {
+            background: #d5e8fa
+        }
+
+        .solution summary:focus-visible {
+            outline: 2px solid #477db4;
+            outline-offset: 2px
+        }
+
+        .solution pre {
+            margin-top: 13px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Домашна работа</h1>
+            <p>C++ · Школа по информатика · 5. клас · Седмица 2</p>
+        </header>
+        <section id="domashno">
+            <h2>Домашна работа</h2>
+            <article class="task">
+                <h3>Задача 0</h3>
+                <div class="condition">допълнете си пиштова
+                    char
+                    long long
+
+                    %</div>
+            </article>
+            <article class="task">
+                <h3>Задача 1</h3>
+                <div class="condition">Въведете малка буква и изведете нея и следващите 5 поредни букви.
+                    вход: i
+                    изход: i j k l m n</div>
+            </article>
+            <article class="task">
+                <h3>Задача 1.1</h3>
+                <div class="condition">Обратното - предишните 5
+                    вход: i
+                    изход: i h g f e d</div>
+            </article>
+            <article class="task">
+                <h3>Задача 2</h3>
+                <div class="condition">Въвежда се двуцифрено число, намере сбора от цифрите му</div>
+            </article>
+            <article class="task">
+                <h3>Задача 2.1</h3>
+                <div class="condition">трицифрено ...</div>
+            </article>
+            <article class="task">
+                <h3>Задача 2.2</h3>
+                <div class="condition">четирицифрено ....</div>
+            </article>
+            <article class="task">
+                <h3>Задача 3. разменени цифри</h3>
+                <div class="condition">Въвежда се двуцифрено число. Изведете числото със сменени места на цифрите.
+                    вход:
+                    37
+
+                    изход:
+                    73</div>
+            </article>
+            <article class="task">
+                <h3>Задача 3.1</h3>
+                <div class="condition">Въвежда се трицифрено число. Изведете го наобратно.
+                    вход:
+                    527
+
+                    изход:
+                    725</div>
+            </article>
+            <article class="task">
+                <h3>Задача 4</h3>
+                <div class="condition">Въвеждат се две двуцифрени числа. Разменете местата на цифрите на всяко от числата и запазете получените обърнати числа в променливи. След това намерете и изведете сбора на двете обърнати числа.
+
+                    вход:
+                    16 34
+
+                    изход:
+                    104</div>
+            </article>
+            <article class="task">
+                <h3>Задача 5</h3>
+                <div class="condition">Минали са X минути ( X се въвежда ). Колко часа и минути са минали:
+                    вход:
+                    80
+
+                    изход:
+                    1 ch i 20 min</div>
+            </article>
+            <article class="task">
+                <h3>Задача 5.1</h3>
+                <div class="condition">Сега кажете и колко дни са минали
+                    вход:
+                    1440
+                    изход:
+                    1 den 0 chas i 0 min</div>
+            </article>
+            <article class="task">
+                <h3>Задача 6</h3>
+                <div class="condition">Въвежда се часа във формат AA:BB, където AA е число от 00 до 23 и BB е число от 00 до 59. Кажете колко минути са минали от началото на деня, ако денят започва в 00:00
+
+                    вход:
+                    10:34
+
+                    изход:
+                    634</div>
+            </article>
+            <article class="task">
+                <h3>Задача 6.1</h3>
+                <div class="condition">А колко минути остава докато свърши денят</div>
+            </article>
+            <article class="task">
+                <h3>Задача 7</h3>
+                <div class="condition">Днес е понеделник. Минават X дни. Кой ден от седмицата ще е тогава.
+                    1 - пон, 2 - вт, 3 - ср, 4 - чет, 5 - пет, 6 - съб, 0 - нед</div>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>
