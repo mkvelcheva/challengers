@@ -1,21 +1,21 @@
 title: "9 клас"
 
 description: >
-  Материали, задачи и упражнения по състезателно програмиране.
+  Материали и задачи по състезателно програмиране.
 
 lessons:
 
   - number: "01"
-    date: "14 септември"
+    date: "5 октомври"
     title: "Сложност на алгоритмите"
-
     resources:
-      - label: "Теория"
-        href: "01/theory.html"
-        color: "purple"
-        id: "lesson01-theory"
+      - theory
+      - tasks
 
-      - label: "Задачи"
-        href: "01/tasks.html"
-        color: "orange"
-        id: "lesson01-tasks"
+  - number: "02"
+    date: "12 октомври"
+    title: "STL"
+    resources:
+      - theory
+      - tasks
+      - homework
