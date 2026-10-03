@@ -12,6 +12,7 @@ lessons:
     resources:
       - theory
       - tasks
+      - homework
 
   - number: "02"
     date: "28 септември"
