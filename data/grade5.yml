@@ -1,1 +1,38 @@
+title: "5 клас"
 
+description: >
+  Всички теми на едно място.
+  Отбелязвайте прочетеното, за да следите напредъка си.
+
+lessons:
+
+  - number: "01"
+    date: "14 септември"
+    title: "Въведение в C++"
+
+    resources:
+      - label: "Теория"
+        href: "01/theory.html"
+        color: "purple"
+        id: "lesson01-theory"
+
+      - label: "Задачи"
+        href: "01/tasks.html"
+        color: "orange"
+        id: "lesson01-tasks"
+
+
+  - number: "02"
+    date: "21 септември"
+    title: "Условни оператори"
+
+    resources:
+      - label: "Теория"
+        href: "02/theory.html"
+        color: "purple"
+        id: "lesson02-theory"
+
+      - label: "Задачи"
+        href: "02/tasks.html"
+        color: "orange"
+        id: "lesson02-tasks"
