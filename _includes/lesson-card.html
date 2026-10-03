@@ -16,13 +16,20 @@
 
         <div class="resources">
 
-            {% for resource in include.lesson.resources %}
+            {% for resource_type in include.lesson.resources %}
 
-                {% assign resource_info = site.data.resource_types[resource.type] %}
+                {% assign resource_info = site.data.resource_types[resource_type] %}
+
+                {% assign resource_href =
+                    include.lesson.number
+                    | append: "/"
+                    | append: resource_type
+                    | append: ".html"
+                %}
 
                 <div class="resource {{ resource_info.color }}">
 
-                    <a href="{{ resource.href }}">
+                    <a href="{{ resource_href }}">
                         <span class="resource-dot">●</span>
                         {{ resource_info.label }}
                     </a>
@@ -30,7 +37,7 @@
                     <input
                         class="done"
                         type="checkbox"
-                        id="lesson-{{ include.lesson.number }}-{{ resource.type }}"
+                        id="lesson-{{ include.lesson.number }}-{{ resource_type }}"
                         aria-label="Отбележи {{ resource_info.label }} като завършено"
                     >
 
