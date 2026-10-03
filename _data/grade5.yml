@@ -27,12 +27,8 @@ lessons:
     title: "Условни оператори"
 
     resources:
-      - label: "Теория"
-        href: "02/theory.html"
-        color: "purple"
-        id: "lesson02-theory"
-
-      - label: "Задачи"
-        href: "02/tasks.html"
-        color: "orange"
-        id: "lesson02-tasks"
+      - type: theory
+        href: "01/theory.html"
+    
+      - type: tasks
+        href: "01/tasks.html"
