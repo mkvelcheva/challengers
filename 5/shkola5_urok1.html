@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Школа 5. клас — урок, седмица 2</title>
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+            color: #182639;
+            background: #f4f7fb
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0
+        }
+
+        .wrap {
+            max-width: 940px;
+            margin: auto;
+            padding: 34px 20px 80px
+        }
+
+        header {
+            background: #16355d;
+            color: white;
+            border-radius: 19px;
+            padding: 34px 38px;
+            margin-bottom: 32px
+        }
+
+        h1 {
+            font-size: 2.15rem;
+            line-height: 1.15;
+            margin: 0 0 9px
+        }
+
+        header p {
+            margin: 0;
+            color: #daebff;
+            line-height: 1.5
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        nav a {
+            font-size: .9rem;
+            color: #e8f5ff;
+            text-decoration: none;
+            border: 1px solid #7eabc9;
+            border-radius: 99px;
+            padding: 7px 13px
+        }
+
+        nav a:hover {
+            background: #34577c
+        }
+
+        section {
+            margin: 34px 0 42px
+        }
+
+        h2 {
+            color: #173c68;
+            font-size: 1.55rem;
+            margin: 0 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #c8d9ee
+        }
+
+        h3 {
+            font-size: 1.17rem;
+            margin: 0 0 11px;
+            color: #163b66
+        }
+
+        .intro,
+        .explain {
+            line-height: 1.62;
+            font-size: 1.04rem
+        }
+
+        .explain {
+            background: #e8f1fc;
+            border-left: 4px solid #477db4;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0 22px
+        }
+
+        .explain p {
+            margin: 0 0 10px
+        }
+
+        .explain p:last-child {
+            margin-bottom: 0
+        }
+
+        .explain ul {
+            margin: 8px 0 0;
+            padding-left: 23px
+        }
+
+        .task {
+            background: white;
+            border: 1px solid #dbe4ef;
+            border-radius: 14px;
+            padding: 21px 24px;
+            margin: 12px 0;
+            break-inside: avoid
+        }
+
+        .condition {
+            white-space: pre-wrap;
+            line-height: 1.54;
+            font-size: 1.01rem
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            background: #f0f4fa;
+            border-radius: 4px;
+            padding: 1px 5px
+        }
+
+        pre {
+            background: #142b46;
+            color: #eef7ff;
+            padding: 13px 17px;
+            border-radius: 9px;
+            overflow: auto;
+            margin: 12px 0 2px;
+            line-height: 1.55
+        }
+
+        pre code {
+            background: none;
+            padding: 0
+        }
+
+        .callout {
+            border-radius: 11px;
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            padding: 14px 18px;
+            line-height: 1.5;
+            margin: 20px 0
+        }
+
+        @media print {
+            body {
+                background: white
+            }
+
+            .wrap {
+                max-width: none;
+                padding: 0
+            }
+
+            header {
+                background: white;
+                color: #173c68;
+                border-radius: 0;
+                border-bottom: 2px solid #173c68;
+                padding: 0 0 16px;
+                margin-bottom: 25px
+            }
+
+            header p {
+                color: #333
+            }
+
+            nav {
+                display: none
+            }
+
+            section {
+                margin: 25px 0
+            }
+
+            h2 {
+                break-after: avoid
+            }
+
+            .task {
+                padding: 15px 18px;
+                margin: 9px 0
+            }
+
+            pre {
+                background: #f1f5fa;
+                color: #111;
+                white-space: pre-wrap
+            }
+        }
+
+        .solution {
+            margin-top: 18px;
+            border-top: 1px solid #dbe4ef;
+            padding-top: 12px
+        }
+
+        .solution summary {
+            cursor: pointer;
+            display: inline-block;
+            list-style: none;
+            background: #e8f1fc;
+            color: #163b66;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 9px 14px;
+            user-select: none
+        }
+
+        .solution summary::-webkit-details-marker {
+            display: none
+        }
+
+        .solution summary::before {
+            content: '▸';
+            display: inline-block;
+            margin-right: 9px;
+            transition: transform .2s
+        }
+
+        .solution[open] summary::before {
+            transform: rotate(90deg)
+        }
+
+        .solution summary:hover,
+        .solution summary:focus-visible {
+            background: #d5e8fa
+        }
+
+        .solution summary:focus-visible {
+            outline: 2px solid #477db4;
+            outline-offset: 2px
+        }
+
+        .solution pre {
+            margin-top: 13px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Големи числа, символи и остатък при деление</h1>
+            <p>C++ · Школа по информатика · 5. клас · Седмица 2</p>
+            <nav><a href="#golemi">Големи числа</a><a href="#simvoli">Символи</a><a href="#cifri">Цифри и символи</a><a
+                    href="#kodove">Кодове</a><a href="#ostatuk">Деление и остатък</a></nav>
+        </header>
+        <section id="golemi">
+            <h2>1. Когато числата станат големи</h2>
+            <p class="intro">В една програма можем да пазим цели числа в променливи. Типът <code>int</code> е удобен за
+                по-малки стойности. Когато резултатът може да е много голям, използваме <code>long long</code>.</p>
+            <div class="explain">
+                <p>Представете си редица от маси: на първата има 1 кюфте, на втората - 2, на третата - 3 и така нататък.
+                    Как се променя общият брой кюфтета, когато масите станат много? </p>
+                <p><code>long long</code> може да пази много по-големи цели числа от обичайния <code>int</code>.
+                    Например един милион маси са достатъчни, за да помислим внимателно кой тип да изберем.</p>
+            </div>
+            <article class="task">
+                <h3>Задача 1. КУПОН!</h3>
+                <div class="condition">поредица от маси! Въвеждат ни колко са масите
+                    на маса 1 има 1 кюфте, на маса 2 - 2 кюфтета, на broiMasi-тата има broiMasi кюфтета. Програмата да
+                    извежда колко кюфтета има общо на всички маси.
+                    пример:
+                    вход:
+                    7
+                    изход:
+                    28
+                    вход:
+                    9
+                    изход:
+                    45</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    long long broiMasi;
+    cin &gt;&gt; broiMasi;
+    long long obshto = broiMasi * (broiMasi + 1) / 2;
+    cout &lt;&lt; obshto;
+
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+        </section>
+        <section id="simvoli">
+            <h2>2. Символи: <code>char</code></h2>
+            <div class="explain">
+                <p><code>char</code> пази един символ: буква, цифра или знак. Например <code>'A'</code>,
+                    <code>'7'</code> и <code>'#'</code> са символи. Ограждаме ги с единични кавички, когато искаме да ги
+                    използваме в кода.</p>
+                <p>Всеки от символите има свой уникален числов код. Затова можем да сравняваме букви по техните кодове и
+                    с хитри сметки да получаваме други символи. Главните и малките латински букви имат постоянна разлика
+                    между кодовете си, което е удобно когато например искаме да напрвим някоя буква от малка в голяма
+                    или обратно. Кодовете на символите се определят от тъй наречената ASCII таблица.</p>
+            </div>
+            <article class="task">
+                <h3>Задача 2</h3>
+                <div class="condition">Въвежда се символ, изпечатайте хоризонтална линия от 5 такива символа
+                    пример:
+                    #
+                    изход:
+                    #####</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    char znak;
+    cin &gt;&gt; znak;
+    cout &lt;&lt; znak &lt;&lt; znak &lt;&lt; znak &lt;&lt; znak &lt;&lt; znak;
+
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+            <article class="task">
+                <h3>Задача 2.1</h3>
+                <div class="condition">Въвежда се символ, нарисувайте тригълник с 5 реда, съставен от въведения символ:
+                    пример:
+                    @
+                    изход:
+                    @
+                    @@
+                    @@@
+                    @@@@
+                    @@@@@</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    char znak;
+    cin &gt;&gt; znak;
+    cout &lt;&lt; znak &lt;&lt; &#x27;\n&#x27;;
+    cout &lt;&lt; znak &lt;&lt; znak &lt;&lt; &#x27;\n&#x27;;
+    cout &lt;&lt; znak &lt;&lt; znak &lt;&lt; znak &lt;&lt; &#x27;\n&#x27;;
+    cout &lt;&lt; znak &lt;&lt; znak &lt;&lt; znak &lt;&lt; znak &lt;&lt; &#x27;\n&#x27;;
+    cout &lt;&lt; znak &lt;&lt; znak &lt;&lt; znak &lt;&lt; znak &lt;&lt; znak &lt;&lt; &#x27;\n&#x27;;
+
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+            <article class="task">
+                <h3>Задача 3</h3>
+                <div class="condition">Въвежда се главна буква, изведете нейната съответна малка:
+                    пример:
+                    вход:
+                    A
+                    изход:
+                    a</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    char bukva;
+    cin &gt;&gt; bukva;
+    int razlika = &#x27;a&#x27; - &#x27;A&#x27;;
+    char malka = char(bukva + razlika);
+    cout &lt;&lt; malka;
+
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+            <article class="task">
+                <h3>Задача 3.1</h3>
+                <div class="condition">Обратното</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    char bukva;
+    cin &gt;&gt; bukva;
+    int razlika = &#x27;a&#x27; - &#x27;A&#x27;;
+    char glavna = char(bukva - razlika);
+    cout &lt;&lt; glavna;
+
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+        </section>
+        <section id="cifri">
+            <h2>3. Число и символ, който изглежда като цифра</h2>
+            <div class="explain">
+                <p>Числото <code>7</code> и символът <code>'7'</code> изглеждат сходно при извеждане, но се пазят по
+                    различен начин - например кодът на символът '7' е 55 (от ASCII таблицата). С число можем да смятаме;
+                    символът може да е част от текст или код.</p>
+                <p>Символите от <code>'0'</code> до <code>'9'</code> са подредени един след друг - тоест имат
+                    последователни кодове. Кодът на <code>'0'</code> е отправната точка, когато превръщаме едноцифрено
+                    число в символ. Подобно е и при буквите - ако към кодът на дадена буква добавим/извадим 1 получаваме
+                    кода на следващата/предишната в азбуката. Ако добавим/извадим 2 получаваме кода на
+                    по-следващата/по-предишната и т.н.</p>
+            </div>
+            <article class="task">
+                <h3>Задача 4</h3>
+                <div class="condition">Въвежда се едноцифрено цяло число от 0 до 9.
+                    Превърнете го в съответния символ от тип char и го изведете.</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int cifra;
+    cin &gt;&gt; cifra;
+    char simvol = char(cifra + &#x27;0&#x27;);
+    cout &lt;&lt; simvol;
+
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+        </section>
+        <section id="kodove">
+            <h2>4. Няма нужда да помним кодовете наизуст</h2>
+            <div class="explain">
+                <p>Ако някога се чудим какъв код има даден символ или обратно - дадено число на кой символ е код - можем
+                    да използваме следните редове код.</p>
+                <pre><code>cout &lt;&lt; (char) 43 &lt;&lt; &#x27;\n&#x27;;
+cout &lt;&lt; (int) '#' &lt;&lt; &#x27;\n&#x27;; 
+</code></pre>
+                <p>Горният код ще изведе символа с код 43 и кода на символа '#'.</p>
+            </div>
+        </section>
+        <section id="ostatuk">
+            <h2>5. Целочислено деление и остатък</h2>
+            <div class="explain">
+                <p>Когато делим две цели числа, <code>/</code> дава цялата част от частното, а <code>%</code> дава
+                    остатъка.</p>
+                <pre><code>17 / 5  →  3
+17 % 5  →  2</code></pre>
+                <p>При деление на 10 остатъкът е последната цифра на числото, а целочисленото деление на 10 премахва
+                    последната цифра. Така можем да работим с отделните цифри на число.</p>
+            </div>
+            <article class="task">
+                <h3>Задача 5</h3>
+                <div class="condition">Въвежда се число с поне 3 цифри.
+                    Изведете на отделени редове последната му цифра и числото с изтрита последна цифра.
+                    пример:
+                    вход:
+                    1327
+                    изход:
+                    7
+                    132</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int chislo;
+    cin &gt;&gt; chislo;
+    cout &lt;&lt; chislo % 10 &lt;&lt; &#x27;\n&#x27;;
+    cout &lt;&lt; chislo / 10 &lt;&lt; &#x27;\n&#x27;;
+
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>
