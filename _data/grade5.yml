@@ -7,28 +7,32 @@ description: >
 lessons:
 
   - number: "01"
-    date: "14 септември"
-    title: "Въведение в C++"
-
+    date: "21 септември"
+    title: "Въведение в програмирането"
     resources:
-      - label: "Теория"
-        href: "01/theory.html"
-        color: "purple"
-        id: "lesson01-theory"
-
-      - label: "Задачи"
-        href: "01/tasks.html"
-        color: "orange"
-        id: "lesson01-tasks"
-
+      - theory
+      - tasks
 
   - number: "02"
-    date: "21 септември"
-    title: "Условни оператори"
-
+    date: "28 септември"
+    title: "Променливи и вход/изход"
     resources:
-      - type: theory
-        href: "01/theory.html"
-    
-      - type: tasks
-        href: "01/tasks.html"
+      - theory
+      - tasks
+      - homework
+
+  - number: "03"
+    date: "05 октомври"
+    title: "Условни оператори"
+    resources:
+      - theory
+      - tasks
+      - interactive
+
+  - number: "04"
+    date: "12 октомври"
+    title: "Цикли"
+    resources:
+      - theory
+      - tasks
+      - homework
