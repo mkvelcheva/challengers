@@ -18,19 +18,23 @@
 
             {% for resource in include.lesson.resources %}
 
-            <div class="resource {{ resource.color }}">
+                {% assign resource_info = site.data.resource_types[resource.type] %}
 
-                <a href="{{ resource.href }}">
-                    ● {{ resource.label }}
-                </a>
+                <div class="resource {{ resource_info.color }}">
 
-                <input
-                    class="done"
-                    type="checkbox"
-                    id="{{ resource.id }}"
-                >
+                    <a href="{{ resource.href }}">
+                        <span class="resource-dot">●</span>
+                        {{ resource_info.label }}
+                    </a>
 
-            </div>
+                    <input
+                        class="done"
+                        type="checkbox"
+                        id="lesson-{{ include.lesson.number }}-{{ resource.type }}"
+                        aria-label="Отбележи {{ resource_info.label }} като завършено"
+                    >
+
+                </div>
 
             {% endfor %}
 
