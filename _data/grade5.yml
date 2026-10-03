@@ -11,7 +11,6 @@ lessons:
     title: "Въведение в програмирането"
     resources:
       - theory
-      - tasks
       - homework
 
   - number: "02"
