@@ -1,1 +1,51 @@
+---
+---
 
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ page.title }} | Challengers</title>
+
+    <link rel="stylesheet"
+          href="{{ '/assets/class.css' | relative_url }}">
+</head>
+
+<body data-class="{{ page.class_id }}">
+
+{% assign class_data = site.data[page.data_file] %}
+
+<header class="hero">
+
+    <h1>{{ class_data.title }}</h1>
+
+    <p>{{ class_data.description }}</p>
+
+    <div class="progress-wrap">
+        <div class="progress-text"></div>
+
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <a class="back" href="{{ '/' | relative_url }}">
+        ← Всички класове
+    </a>
+
+</header>
+
+<main class="timeline">
+
+    {% for lesson in class_data.lessons %}
+        {% include lesson-card.html lesson=lesson %}
+    {% endfor %}
+
+</main>
+
+<script src="{{ '/assets/class.js' | relative_url }}"></script>
+
+</body>
+</html>
