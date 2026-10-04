@@ -18,21 +18,12 @@ lessons:
     title: "Големи числа, символи и остатък при деление"
     resources:
       - theory
-      - tasks
       - homework
 
   - number: "03"
     date: "05 октомври"
-    title: "Условни оператори"
+    title: "Условен оператор"
     resources:
       - theory
-      - tasks
-      - interactive
-
-  - number: "04"
-    date: "12 октомври"
-    title: "Цикли"
-    resources:
-      - theory
-      - tasks
       - homework
+
