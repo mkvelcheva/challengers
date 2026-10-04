@@ -1,0 +1,21 @@
+title: "7/8 клас, Група C"
+
+description: >
+  Материали и задачи по състезателно програмиране.
+
+lessons:
+
+  - number: "01"
+    date: "5 октомври"
+    title: "Сложност на алгоритмите"
+    resources:
+      - theory
+      - tasks
+
+  - number: "02"
+    date: "12 октомври"
+    title: "STL"
+    resources:
+      - theory
+      - tasks
+      - homework
