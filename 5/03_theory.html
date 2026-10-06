@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Школа 5. клас — урок, седмица 3</title>
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+            color: #182639;
+            background: #f4f7fb
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0
+        }
+
+        .wrap {
+            max-width: 940px;
+            margin: auto;
+            padding: 34px 20px 80px
+        }
+
+        header {
+            background: #16355d;
+            color: white;
+            border-radius: 19px;
+            padding: 34px 38px;
+            margin-bottom: 32px
+        }
+
+        h1 {
+            font-size: 2.15rem;
+            line-height: 1.15;
+            margin: 0 0 9px
+        }
+
+        header p {
+            margin: 0;
+            color: #daebff;
+            line-height: 1.5
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        nav a {
+            font-size: .9rem;
+            color: #e8f5ff;
+            text-decoration: none;
+            border: 1px solid #7eabc9;
+            border-radius: 99px;
+            padding: 7px 13px
+        }
+
+        nav a:hover {
+            background: #34577c
+        }
+
+        section {
+            margin: 34px 0 42px
+        }
+
+        h2 {
+            color: #173c68;
+            font-size: 1.55rem;
+            margin: 0 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #c8d9ee
+        }
+
+        h3 {
+            font-size: 1.17rem;
+            margin: 0 0 11px;
+            color: #163b66
+        }
+
+        .intro,
+        .explain {
+            line-height: 1.62;
+            font-size: 1.04rem
+        }
+
+        .explain {
+            background: #e8f1fc;
+            border-left: 4px solid #477db4;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0 22px
+        }
+
+        .explain p {
+            margin: 0 0 10px
+        }
+
+        .explain p:last-child {
+            margin-bottom: 0
+        }
+
+        .explain ul {
+            margin: 8px 0 0;
+            padding-left: 23px
+        }
+
+        .task {
+            background: white;
+            border: 1px solid #dbe4ef;
+            border-radius: 14px;
+            padding: 21px 24px;
+            margin: 12px 0;
+            break-inside: avoid
+        }
+
+        .condition {
+            white-space: pre-wrap;
+            line-height: 1.54;
+            font-size: 1.01rem
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            background: #f0f4fa;
+            border-radius: 4px;
+            padding: 1px 5px
+        }
+
+        pre {
+            background: #142b46;
+            color: #eef7ff;
+            padding: 13px 17px;
+            border-radius: 9px;
+            overflow: auto;
+            margin: 12px 0 2px;
+            line-height: 1.55
+        }
+
+        pre code {
+            background: none;
+            padding: 0
+        }
+
+        .callout {
+            border-radius: 11px;
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            padding: 14px 18px;
+            line-height: 1.5;
+            margin: 20px 0
+        }
+
+        @media print {
+            body {
+                background: white
+            }
+
+            .wrap {
+                max-width: none;
+                padding: 0
+            }
+
+            header {
+                background: white;
+                color: #173c68;
+                border-radius: 0;
+                border-bottom: 2px solid #173c68;
+                padding: 0 0 16px;
+                margin-bottom: 25px
+            }
+
+            header p {
+                color: #333
+            }
+
+            nav {
+                display: none
+            }
+
+            section {
+                margin: 25px 0
+            }
+
+            h2 {
+                break-after: avoid
+            }
+
+            .task {
+                padding: 15px 18px;
+                margin: 9px 0
+            }
+
+            pre {
+                background: #f1f5fa;
+                color: #111;
+                white-space: pre-wrap
+            }
+        }
+
+        .solution {
+            margin-top: 18px;
+            border-top: 1px solid #dbe4ef;
+            padding-top: 12px
+        }
+
+        .solution summary {
+            cursor: pointer;
+            display: inline-block;
+            list-style: none;
+            background: #e8f1fc;
+            color: #163b66;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 9px 14px;
+            user-select: none
+        }
+
+        .solution summary::-webkit-details-marker {
+            display: none
+        }
+
+        .solution summary::before {
+            content: '▸';
+            display: inline-block;
+            margin-right: 9px;
+            transition: transform .2s
+        }
+
+        .solution[open] summary::before {
+            transform: rotate(90deg)
+        }
+
+        .solution summary:hover,
+        .solution summary:focus-visible {
+            background: #d5e8fa
+        }
+
+        .solution summary:focus-visible {
+            outline: 2px solid #477db4;
+            outline-offset: 2px
+        }
+
+        .solution pre {
+            margin-top: 13px
+        }
+
+        .condition a {
+            color: #145b9d;
+            overflow-wrap: anywhere
+        }
+
+        .note {
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            border-radius: 11px;
+            padding: 14px 18px;
+            line-height: 1.55;
+            margin: 16px 0
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Условен оператор</h1>
+            <p>C++ · Школа по информатика · 5. клас · Седмица 3</p>
+            <nav><a href="#if">if</a><a href="#andor">и / или</a><a href="#hunger">Сравнения</a><a
+                    href="#palindrome">Палиндроми</a></nav>
+        </header>
+
+        <article class="task">
+            <h3>Задача 0</h3>
+            <div class="condition">Днес е понеделник. Минават X дни. Кой ден от седмицата ще е тогава?
+                1 - пон, 2 - вт, 3 - ср, 4 - чет, 5 - пет, 6 - съб, 0 - нед
+                Изведете името на деня вместо неговия номер.
+                Примерен вход:
+                10
+                Изход:
+                chetvurtuk</div>
+            <details class="solution">
+                <summary>Покажи решение</summary>
+                <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x;
+    cin &gt;&gt; x;
+    int den = (1 + x) % 7;
+    if (den == 0) {
+        cout &lt;&lt; &quot;nedelq&quot;;
+    }
+    if (den == 1) {
+        cout &lt;&lt; &quot;ponedelnik&quot;;
+    }
+    if (den == 2) {
+        cout &lt;&lt; &quot;vtornik&quot;;
+    }
+    if (den == 3) {
+        cout &lt;&lt; &quot;srqda&quot;;
+    }
+    if (den == 4) {
+        cout &lt;&lt; &quot;chetvurtuk&quot;;
+    }
+    if (den == 5) {
+        cout &lt;&lt; &quot;petuk&quot;;
+    }
+    if (den == 6) {
+        cout &lt;&lt; &quot;subota&quot;;
+    }
+    return 0;
+}</code></pre>
+            </details>
+        </article>
+        <section id="if">
+            <h2>1. Условният оператор if</h2>
+            <div class="explain">
+                <p>С <code>if</code> изпълняваме команда само когато е изпълнено дадено условие.
+                <p>В условието например можем да сравняваме стойности.
+                    Използваме <code>==</code> за проверка за равенство (А НЕ <code>=</code>),
+                    <code>&lt;</code> и <code>&gt;</code> за „по-малко“ и „по-голямо“,
+                    <code>&lt;=</code> и <code>&gt;=</code> за „по-малко или равно“ и „по-голямо или равно“.
+                    <br>Много внимаваме да не изпозлваме <code>=</code> (единично) в условието!
+                </p>
+            </div>
+            <pre><code>if (&lt;условие&gt;) {
+    &lt;код за изпълнение, ако условието е вярно&gt;
+} 
+</code></pre>
+            <pre><code>if (5 &lt; 10) {
+    cout &lt;&lt; "pet e po-malko ot deset" &lt;&lt; "\n";
+    cout &lt;&lt; "oshte neshto";
+} 
+</code></pre>
+        </section>
+        <article class="task">
+            <h3>Задача 1</h3>
+            <div class="condition">В тенджерата има X кюфтета и Y кебапчета. Трябва да си ги разделите поравно с
+                другарчето до вас: всеки да получи равен брой кюфтета и равен брой кебапчета. Не можем да режем храната
+                (нямаме нож).
+                Изведете da, ако е възможно и ne в противен случай.
+
+                Вход:
+                23 13
+                Изход:
+                ne
+
+                Вход:
+                20 18
+                Изход:
+                da</div>
+            <details class="solution">
+                <summary>Покажи решение</summary>
+                <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x, y;
+    cin &gt;&gt; x &gt;&gt; y;
+    if (x % 2 == 0) {
+        if(y % 2 == 0) {
+            cout &lt;&lt; &quot;da&quot;;
+        }
+        if(y % 2 == 1) {
+            cout &lt;&lt; &quot;ne&quot;;
+        }
+    }
+    if (x % 2 == 1) {
+        cout &lt;&lt; &quot;ne&quot;;
+    }
+    return 0;
+}</code></pre>
+            </details>
+        </article>
+        <section>
+            <div class="explain">
+                <p>С <code>==</code> проверяваме дали две стойности са <b>равни</b>.
+                    Понякога е удобно обратното - да проверим дали две неща са <b>различни</b>.
+                    <br>
+                    Това става с <code>!=</code>.
+                </p>
+            </div>
+        </section>
+        <article class="task">
+            <h3>Задача 1.2</h3>
+            <div class="condition">Сега към нас се присъединява още един човек и ставаме трима. Можем ли да разделим
+                поравно кюфтетата и кебапчетата така, че всеки да получи равен брой от всеки вид?
+                Изведете da или ne.
+
+                Вход:
+                222 45
+                Изход:
+                da
+
+                Вход:
+                123 58
+                Изход:
+                ne</div>
+            <details class="solution">
+                <summary>Покажи решение</summary>
+                <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x, y;
+    cin &gt;&gt; x &gt;&gt; y;
+    if (x % 3 == 0) {
+        if(y % 3 == 0) {
+            cout &lt;&lt; &quot;da&quot;;
+        }
+        if(y % 3 != 0) {
+            cout &lt;&lt; &quot;ne&quot;;
+        }
+    }
+    if (x % 3 != 0) {
+        cout &lt;&lt; &quot;ne&quot;;
+    }
+    return 0;
+}</code></pre>
+            </details>
+        </article>
+        <article class="task">
+            <h3>Задача 1.3</h3>
+            <div class="condition">Тримата можем ли да разделим поравно поне единия от двата вида храна?
+                Изведете da или ne.
+
+                Вход:
+                13 9
+                Изход:
+                da
+
+                Вход:
+                17 25
+                Изход:
+                ne</div>
+            <details class="solution">
+                <summary>Покажи решение</summary>
+                <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x, y;
+    cin &gt;&gt; x &gt;&gt; y;
+    if (x % 3 == 0) {
+	cout &lt;&lt; &quot;da&quot;;
+    }
+    if (x % 3 != 0) {
+	if (y % 3 == 0) {
+            cout &lt;&lt; &quot;da&quot;;
+	}
+	if (y % 3 != 0) {
+            cout &lt;&lt; &quot;ne&quot;;
+	}
+    }
+    return 0;
+}</code></pre>
+            </details>
+        </article>
+
+        <section id="andor">
+            <h2>2. Няколко условия едновременно</h2>
+            <div class="explain">
+                <p>В горните задачи би било много удобно да можем с един <code>if</code> да
+                    проверяваме няколко неща наведнъж. Например, дали две условия
+                    са изпълнени едновременно или поне едно от тях е изпълнено.
+                </p>
+                <p>В C++ съществуват логическите оператори "и" и "или", с които можем да комбинираме прости проверки в
+                    по-сложни.
+                </p>
+                <p>"и" се пише с <code>&amp;&amp;</code> (Shift + 7)
+                    <br>
+                    "или" се пише с <code>||</code> (Shift + \)
+                </p>
+            </div>
+            <pre><code>if (&lt;условие_1&gt; &amp;&amp; &lt;условие_2&gt;) {
+    cout &lt;&lt; &quot;i dvete sa verni&quot;;
+}
+if (&lt;условие_1&gt; || &lt;условие_2&gt;) {
+    cout &lt;&lt; &quot;pone ednoto e vqrno (a moje i dvete)&quot;;   
+}</code></pre>
+            <div class="explain">
+                <p>По този начин можем да решим задачи 1.2 и 1.3 по-лесно.</p>
+            </div>
+            <details class="solution">
+                <summary>Покажи решение 1.2</summary>
+                <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x, y;
+    cin &gt;&gt; x &gt;&gt; y;
+    if(x % 3 == 0 &amp;&amp; y % 3 == 0) {
+         cout &lt;&lt; &quot;da&quot;;
+    }
+    if(x % 3 != 0 || y % 3 != 0) {
+        cout &lt;&lt; &quot;ne&quot;;
+    } 
+    return 0;
+}</code></pre>
+            </details>
+
+            <details class="solution">
+                <summary>Покажи решение 1.3</summary>
+                <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x, y;
+    cin &gt;&gt; x &gt;&gt; y;
+    if(x % 3 == 0 || y % 3 == 0) {
+         cout &lt;&lt; &quot;da&quot;;
+    }
+    if(x % 3 != 0 &amp;&amp; y % 3 != 0) {
+        cout &lt;&lt; &quot;ne&quot;;
+    } 
+    return 0;
+}</code></pre>
+            </details>
+
+        </section>
+        <section id="hunger">
+            <h2>3. Ще ми стигнат ли кюфтетата?</h2>
+            <article class="task">
+                <h3>Задача 2</h3>
+                <div class="condition">Гладен съм за точно 42 кюфтета. В тенджерата има X кюфтета, като X се въвежда от
+                    клавиатурата. Ще успея ли да се наям?
+
+                    Вход:
+                    1234
+                    Изход:
+                    Da, shte se naqdesh i shte si ostanesh debel
+
+                    Вход:
+                    13
+                    Изход:
+                    Ne, shte si ostanash gladen</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int kufteta;
+    cin &gt;&gt; kufteta;
+    if(kufteta &gt;= 42) {
+        cout &lt;&lt; &quot;Da, shte se naqdesh i shte si ostanesh debel&quot;;
+    }
+    if(kufteta &lt; 42) {
+        cout &lt;&lt; &quot;Ne, shte si ostanash gladen&quot;;
+    }
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+            <article class="task">
+                <h3>Задача 2.1</h3>
+                <div class="condition">А ако съм гладен точно Y кюфтета? Въвеждат се първо Y, после X (брой кюфтета в
+                    тенджерата). Изведете същото съобщение като в задача 2.
+
+                    Вход:
+                    42 1234
+                    Изход:
+                    Da, shte se naqdesh i shte si ostanesh debel</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int kuftetaIma, gladnost;
+    cin &gt;&gt; gladnost &gt;&gt; kuftetaIma;
+    if(kuftetaIma &gt;= gladnost) {
+        cout &lt;&lt; &quot;Da, shte se naqdesh i shte si ostanesh debel&quot;;
+    }
+    if(kuftetaIma &lt; gladnost) {
+        cout &lt;&lt; &quot;Ne, shte si ostanash gladen&quot;;
+    }
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+            <article class="task">
+                <h3>Задача 2.2</h3>
+                <div class="condition">В тенджерата има и Z кебапчета. Всяко кебапче го броя за 2 кюфтета. Въвеждат се Y
+                    (колко съм гладен), X (колко кюфтета има) и Z в този ред. Ще успея ли да се наям? Изведете същото
+                    съобщение като в задача 2.
+
+                    Вход:
+                    42 10 20
+                    Изход:
+                    Da, shte se naqdesh i shte si ostanesh debel
+
+                    Вход:
+                    52 10 20
+                    Изход:
+                    Ne, shte si ostanash gladen</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int kuftetaIma, gladnost, kebabchetaIma;
+    cin &gt;&gt; gladnost &gt;&gt; kuftetaIma &gt;&gt; kebabchetaIma;
+    if(kuftetaIma + kebabchetaIma * 2 &gt;= gladnost) {
+        cout &lt;&lt; &quot;Da, shte se naqdesh i shte si ostanesh debel&quot;;
+    }
+    if(kuftetaIma + kebabchetaIma * 2 &lt; gladnost) {
+        cout &lt;&lt; &quot;Ne, shte si ostanash gladen&quot;;
+    }
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+            <article class="task">
+                <h3>Задача 2.3</h3>
+                <div class="condition">Ако съм на диета, трябва да изям само половината от Y кюфтета, които иначе искам
+                    да изям :( . Въвеждат се Y, X, Z и t в този ред. Ако t = 0 не съм на диета, а ако t = 1 съм на
+                    диета.
+                    Ако съм на диета изведете " Da, shte se naqdesh i shte si ostanesh debel, dori da si na dieta" или
+                    "Ne, shte si ostanash gladen, zashtoto si na dieta".
+                    Обещавам, че Y е четно число.
+
+                    Вход:
+                    42 10 10 0
+                    Изход:
+                    Ne, shte si ostanash gladen
+
+                    Вход:
+                    42 10 10 1
+                    Изход:
+                    Da, shte se naqdesh i shte si ostanesh debel, dori da si na dieta</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int kuftetaIma, gladnost, kebabchetaIma, naDietaLiSum;
+    cin &gt;&gt; gladnost &gt;&gt; kuftetaIma &gt;&gt; kebabchetaIma &gt;&gt; naDietaLiSum;
+    if(naDietaLiSum == 0) {
+        if(kuftetaIma + kebabchetaIma * 2 &gt;= gladnost) {
+            cout &lt;&lt; &quot;Da, shte se naqdesh i shte si ostanesh debel&quot;;
+        }
+        if(kuftetaIma + kebabchetaIma * 2 &lt; gladnost) {
+            cout &lt;&lt; &quot;Ne, shte si ostanash gladen&quot;;
+        }
+    }
+    if(naDietaLiSum == 1) {
+        if(kuftetaIma + kebabchetaIma * 2 &gt;= gladnost / 2) {
+            cout &lt;&lt; &quot;Da, shte se naqdesh i shte si ostanesh debel, dori da si na dieta&quot;;
+        }
+        if(kuftetaIma + kebabchetaIma * 2 &lt; gladnost / 2) {
+            cout &lt;&lt; &quot;Ne, shte si ostanash gladen, zashtoto si na dieta&quot;;
+        }
+    }
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+        </section>
+        <section id="palindrome">
+            <h2>4. Палиндроми</h2>
+            <div class="explain">
+                <p>Палиндром е число, което се чете еднакво отляво надясно и отдясно наляво.</p>
+                <p>Примери: 121, 22, 12321, 4</p>
+            </div>
+            <article class="task">
+                <h3>Задача 3</h3>
+                <div class="condition">Въвежда се едно двуцифрено число. Проверете дали е палиндром.
+                    Вход:
+                    22
+                    Изход:
+                    palindrom
+
+                    Вход:
+                    16
+                    Изход:
+                    NEpalindrom</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cin &gt;&gt; n;
+    if(n / 10 == n % 10) {
+        cout &lt;&lt; &quot;palindrom&quot;;
+    } 
+    if(n / 10 != n % 10) {
+        cout &lt;&lt; &quot;NEpalindrom&quot;;
+    }
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+            <article class="task">
+                <h3>Задача 3.1</h3>
+                <div class="condition">Въвежда се едно трицифрено число. Проверете дали е палиндром.
+                    Вход:
+                    212
+                    Изход:
+                    palindrom
+
+                    Вход:
+                    112
+                    Изход:
+                    NEpalindrom</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cin &gt;&gt; n;
+    if(n / 100 == n % 10) {
+        cout &lt;&lt; &quot;palindrom&quot;;
+    } 
+    if(n / 100 != n % 10) {
+        cout &lt;&lt; &quot;NEpalindrom&quot;;
+    }
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+            <article class="task">
+                <h3>Задача 3.2</h3>
+                <div class="condition">Първо се въвежда броят на цифрите, после самото число. Числото е двуцифрено или трицифрено. Проверете дали е палиндром.
+                    Вход:
+                    3 112
+                    Изход:
+                    NEpalindrom</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int broiCifri, n;
+    cin &gt;&gt; broiCifri &gt;&gt; n;
+    if(broiCifri == 2) {
+        if(n / 10 == n % 10) {
+            cout &lt;&lt; &quot;palindrom&quot;;
+        }
+        if(n / 10 != n % 10) {
+            cout &lt;&lt; &quot;NEpalindrom&quot;;
+        } 
+    }
+    if(broiCifri == 3) {
+        if(n / 100 == n % 10) {
+            cout &lt;&lt; &quot;palindrom&quot;;
+        }
+        if(n / 100 != n % 10) {
+            cout &lt;&lt; &quot;NEpalindrom&quot;;
+        } 
+    }
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+            <article class="task">
+                <h3>Задача 3.3</h3>
+                <div class="condition">Въвежда се двуцифрено или трицифрено число. Определете сами броя на цифрите му и
+                    проверете дали е палиндром. Изведете palindrom или NEpalindrom.</div>
+                <details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cin &gt;&gt; n;
+    if(n &lt; 100) {
+        if(n / 10 == n % 10) {
+            cout &lt;&lt; &quot;palindrom&quot;;
+        }
+        if(n / 10 != n % 10) {
+            cout &lt;&lt; &quot;NEpalindrom&quot;;
+        } 
+    }
+    if(n &gt;= 100) {
+        if(n / 100 == n % 10) {
+            cout &lt;&lt; &quot;palindrom&quot;;
+        }
+        if(n / 100 != n % 10) {
+            cout &lt;&lt; &quot;NEpalindrom&quot;;
+        } 
+    }
+    return 0;
+}</code></pre>
+                </details>
+            </article>
+        </section>
+       
+    </div>
+</body>
+
+</html>
