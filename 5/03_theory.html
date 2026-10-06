@@ -279,9 +279,10 @@
         <article class="task">
             <h3>Задача 0</h3>
             <div class="condition">Днес е понеделник. Минават X дни. Кой ден от седмицата ще е тогава?
-                1 - пон, 2 - вт, 3 - ср, 4 - чет, 5 - пет, 6 - съб, 0 - нед
-                Изведете името на деня вместо неговия номер.
-                Примерен вход:
+1 - пон, 2 - вт, 3 - ср, 4 - чет, 5 - пет, 6 - съб, 0 - нед
+Изведете името на деня вместо неговия номер.
+                
+                Вход:
                 10
                 Изход:
                 chetvurtuk</div>
@@ -294,25 +295,25 @@ int main() {
     int x;
     cin &gt;&gt; x;
     int den = (1 + x) % 7;
-    if (den == 0) {
+    if(den == 0) {
         cout &lt;&lt; &quot;nedelq&quot;;
     }
-    if (den == 1) {
+    if(den == 1) {
         cout &lt;&lt; &quot;ponedelnik&quot;;
     }
-    if (den == 2) {
+    if(den == 2) {
         cout &lt;&lt; &quot;vtornik&quot;;
     }
-    if (den == 3) {
+    if(den == 3) {
         cout &lt;&lt; &quot;srqda&quot;;
     }
-    if (den == 4) {
+    if(den == 4) {
         cout &lt;&lt; &quot;chetvurtuk&quot;;
     }
-    if (den == 5) {
+    if(den == 5) {
         cout &lt;&lt; &quot;petuk&quot;;
     }
-    if (den == 6) {
+    if(den == 6) {
         cout &lt;&lt; &quot;subota&quot;;
     }
     return 0;
@@ -330,11 +331,11 @@ int main() {
                     <br>Много внимаваме да не изпозлваме <code>=</code> (единично) в условието!
                 </p>
             </div>
-            <pre><code>if (&lt;условие&gt;) {
+            <pre><code>if(&lt;условие&gt;) {
     &lt;код за изпълнение, ако условието е вярно&gt;
 } 
 </code></pre>
-            <pre><code>if (5 &lt; 10) {
+            <pre><code>if(5 &lt; 10) {
     cout &lt;&lt; "pet e po-malko ot deset" &lt;&lt; "\n";
     cout &lt;&lt; "oshte neshto";
 } 
@@ -342,10 +343,8 @@ int main() {
         </section>
         <article class="task">
             <h3>Задача 1</h3>
-            <div class="condition">В тенджерата има X кюфтета и Y кебапчета. Трябва да си ги разделите поравно с
-                другарчето до вас: всеки да получи равен брой кюфтета и равен брой кебапчета. Не можем да режем храната
-                (нямаме нож).
-                Изведете da, ако е възможно и ne в противен случай.
+            <div class="condition">В тенджерата има X кюфтета и Y кебапчета. Трябва да си ги разделите поравно с другарчето до вас: всеки да получи равен брой кюфтета и равен брой кебапчета. Не можем да режем храната (нямаме нож).
+Изведете da, ако е възможно и ne в противен случай.
 
                 Вход:
                 23 13
@@ -364,7 +363,7 @@ using namespace std;
 int main() {
     int x, y;
     cin &gt;&gt; x &gt;&gt; y;
-    if (x % 2 == 0) {
+    if(x % 2 == 0) {
         if(y % 2 == 0) {
             cout &lt;&lt; &quot;da&quot;;
         }
@@ -372,7 +371,7 @@ int main() {
             cout &lt;&lt; &quot;ne&quot;;
         }
     }
-    if (x % 2 == 1) {
+    if(x % 2 == 1) {
         cout &lt;&lt; &quot;ne&quot;;
     }
     return 0;
@@ -390,9 +389,8 @@ int main() {
         </section>
         <article class="task">
             <h3>Задача 1.2</h3>
-            <div class="condition">Сега към нас се присъединява още един човек и ставаме трима. Можем ли да разделим
-                поравно кюфтетата и кебапчетата така, че всеки да получи равен брой от всеки вид?
-                Изведете da или ne.
+            <div class="condition">Сега към нас се присъединява още един човек и ставаме трима. Можем ли да разделим поравно кюфтетата и кебапчетата така, че всеки да получи равен брой от всеки вид?
+Изведете da или ne.
 
                 Вход:
                 222 45
@@ -411,7 +409,7 @@ using namespace std;
 int main() {
     int x, y;
     cin &gt;&gt; x &gt;&gt; y;
-    if (x % 3 == 0) {
+    if(x % 3 == 0) {
         if(y % 3 == 0) {
             cout &lt;&lt; &quot;da&quot;;
         }
@@ -419,7 +417,7 @@ int main() {
             cout &lt;&lt; &quot;ne&quot;;
         }
     }
-    if (x % 3 != 0) {
+    if(x % 3 != 0) {
         cout &lt;&lt; &quot;ne&quot;;
     }
     return 0;
@@ -429,7 +427,7 @@ int main() {
         <article class="task">
             <h3>Задача 1.3</h3>
             <div class="condition">Тримата можем ли да разделим поравно поне единия от двата вида храна?
-                Изведете da или ne.
+Изведете da или ne.
 
                 Вход:
                 13 9
@@ -448,16 +446,16 @@ using namespace std;
 int main() {
     int x, y;
     cin &gt;&gt; x &gt;&gt; y;
-    if (x % 3 == 0) {
-	cout &lt;&lt; &quot;da&quot;;
+    if(x % 3 == 0) {
+        cout &lt;&lt; &quot;da&quot;;
     }
-    if (x % 3 != 0) {
-	if (y % 3 == 0) {
+    if(x % 3 != 0) {
+        if(y % 3 == 0) {
             cout &lt;&lt; &quot;da&quot;;
-	}
-	if (y % 3 != 0) {
+        }
+        if(y % 3 != 0) {
             cout &lt;&lt; &quot;ne&quot;;
-	}
+        }
     }
     return 0;
 }</code></pre>
@@ -479,10 +477,10 @@ int main() {
                     "или" се пише с <code>||</code> (Shift + \)
                 </p>
             </div>
-            <pre><code>if (&lt;условие_1&gt; &amp;&amp; &lt;условие_2&gt;) {
+            <pre><code>if(&lt;условие_1&gt; &amp;&amp; &lt;условие_2&gt;) {
     cout &lt;&lt; &quot;i dvete sa verni&quot;;
 }
-if (&lt;условие_1&gt; || &lt;условие_2&gt;) {
+if(&lt;условие_1&gt; || &lt;условие_2&gt;) {
     cout &lt;&lt; &quot;pone ednoto e vqrno (a moje i dvete)&quot;;   
 }</code></pre>
             <div class="explain">
@@ -529,8 +527,7 @@ int main() {
             <h2>3. Ще ми стигнат ли кюфтетата?</h2>
             <article class="task">
                 <h3>Задача 2</h3>
-                <div class="condition">Гладен съм за точно 42 кюфтета. В тенджерата има X кюфтета, като X се въвежда от
-                    клавиатурата. Ще успея ли да се наям?
+                <div class="condition">Гладен съм за точно 42 кюфтета. В тенджерата има X кюфтета, като X се въвежда от клавиатурата. Ще успея ли да се наям?
 
                     Вход:
                     1234
@@ -561,8 +558,7 @@ int main() {
             </article>
             <article class="task">
                 <h3>Задача 2.1</h3>
-                <div class="condition">А ако съм гладен точно Y кюфтета? Въвеждат се първо Y, после X (брой кюфтета в
-                    тенджерата). Изведете същото съобщение като в задача 2.
+                <div class="condition">А ако съм гладен точно Y кюфтета? Въвеждат се първо Y, после X (брой кюфтета в тенджерата). Изведете същото съобщение като в задача 2.
 
                     Вход:
                     42 1234
@@ -588,9 +584,7 @@ int main() {
             </article>
             <article class="task">
                 <h3>Задача 2.2</h3>
-                <div class="condition">В тенджерата има и Z кебапчета. Всяко кебапче го броя за 2 кюфтета. Въвеждат се Y
-                    (колко съм гладен), X (колко кюфтета има) и Z в този ред. Ще успея ли да се наям? Изведете същото
-                    съобщение като в задача 2.
+                <div class="condition">В тенджерата има и Z кебапчета. Всяко кебапче го броя за 2 кюфтета. Въвеждат се Y (колко съм гладен), X (колко кюфтета има) и Z в този ред. Ще успея ли да се наям? Изведете същото съобщение като в задача 2.
 
                     Вход:
                     42 10 20
@@ -621,12 +615,10 @@ int main() {
             </article>
             <article class="task">
                 <h3>Задача 2.3</h3>
-                <div class="condition">Ако съм на диета, трябва да изям само половината от Y кюфтета, които иначе искам
-                    да изям :( . Въвеждат се Y, X, Z и t в този ред. Ако t = 0 не съм на диета, а ако t = 1 съм на
-                    диета.
-                    Ако съм на диета изведете " Da, shte se naqdesh i shte si ostanesh debel, dori da si na dieta" или
-                    "Ne, shte si ostanash gladen, zashtoto si na dieta".
-                    Обещавам, че Y е четно число.
+                <div class="condition">Ако съм на диета, трябва да изям само половината от Y кюфтета, които иначе искам да изям :( .
+Въвеждат се Y (колко съм гладен), X (колко кюфтета имам), Z (колко кебапчета имам) и t в този ред. Ако t = 0 не съм на диета, а ако t = 1 съм на диета.
+Ако съм на диета изведете "Da, shte se naqdesh i shte si ostanesh debel, dori da si na dieta" или "Ne, shte si ostanash gladen, zashtoto si na dieta".
+Обещавам, че Y е четно число.
 
                     Вход:
                     42 10 10 0
@@ -675,6 +667,7 @@ int main() {
             <article class="task">
                 <h3>Задача 3</h3>
                 <div class="condition">Въвежда се едно двуцифрено число. Проверете дали е палиндром.
+
                     Вход:
                     22
                     Изход:
@@ -705,6 +698,7 @@ int main() {
             <article class="task">
                 <h3>Задача 3.1</h3>
                 <div class="condition">Въвежда се едно трицифрено число. Проверете дали е палиндром.
+
                     Вход:
                     212
                     Изход:
@@ -735,6 +729,7 @@ int main() {
             <article class="task">
                 <h3>Задача 3.2</h3>
                 <div class="condition">Първо се въвежда броят на цифрите, после самото число. Числото е двуцифрено или трицифрено. Проверете дали е палиндром.
+
                     Вход:
                     3 112
                     Изход:
@@ -769,8 +764,7 @@ int main() {
             </article>
             <article class="task">
                 <h3>Задача 3.3</h3>
-                <div class="condition">Въвежда се двуцифрено или трицифрено число. Определете сами броя на цифрите му и
-                    проверете дали е палиндром. Изведете palindrom или NEpalindrom.</div>
+                <div class="condition">Въвежда се двуцифрено или трицифрено число. Определете сами броя на цифрите му и проверете дали е палиндром.</div>
                 <details class="solution">
                     <summary>Покажи решение</summary>
                     <pre><code>#include &lt;iostream&gt;
