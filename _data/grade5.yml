@@ -27,3 +27,10 @@ lessons:
       - theory
       - homework
 
+  - number: "04"
+    date: "12 октомври"
+    title: "Pesho.org"
+    resources:
+      - theory
+      - homework
+
