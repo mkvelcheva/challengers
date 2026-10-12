@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Школа 5. клас — урок, седмица 3</title>
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+            color: #182639;
+            background: #f4f7fb
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0
+        }
+
+        .wrap {
+            max-width: 940px;
+            margin: auto;
+            padding: 34px 20px 80px
+        }
+
+        header {
+            background: #16355d;
+            color: white;
+            border-radius: 19px;
+            padding: 34px 38px;
+            margin-bottom: 32px
+        }
+
+        h1 {
+            font-size: 2.15rem;
+            line-height: 1.15;
+            margin: 0 0 9px
+        }
+
+        header p {
+            margin: 0;
+            color: #daebff;
+            line-height: 1.5
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        nav a {
+            font-size: .9rem;
+            color: #e8f5ff;
+            text-decoration: none;
+            border: 1px solid #7eabc9;
+            border-radius: 99px;
+            padding: 7px 13px
+        }
+
+        nav a:hover {
+            background: #34577c
+        }
+
+        section {
+            margin: 34px 0 42px
+        }
+
+        h2 {
+            color: #173c68;
+            font-size: 1.55rem;
+            margin: 0 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #c8d9ee
+        }
+
+        h3 {
+            font-size: 1.17rem;
+            margin: 0 0 11px;
+            color: #163b66
+        }
+
+        .intro,
+        .explain {
+            line-height: 1.62;
+            font-size: 1.04rem
+        }
+
+        .explain {
+            background: #e8f1fc;
+            border-left: 4px solid #477db4;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0 22px
+        }
+
+        .explain p {
+            margin: 0 0 10px
+        }
+
+        .explain p:last-child {
+            margin-bottom: 0
+        }
+
+        .explain ul {
+            margin: 8px 0 0;
+            padding-left: 23px
+        }
+
+        .task {
+            background: white;
+            border: 1px solid #dbe4ef;
+            border-radius: 14px;
+            padding: 21px 24px;
+            margin: 12px 0;
+            break-inside: avoid
+        }
+
+        .condition {
+            white-space: pre-wrap;
+            line-height: 1.54;
+            font-size: 1.01rem
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            background: #f0f4fa;
+            border-radius: 4px;
+            padding: 1px 5px
+        }
+
+        pre {
+            background: #142b46;
+            color: #eef7ff;
+            padding: 13px 17px;
+            border-radius: 9px;
+            overflow: auto;
+            margin: 12px 0 2px;
+            line-height: 1.55
+        }
+
+        pre code {
+            background: none;
+            padding: 0
+        }
+
+        .callout {
+            border-radius: 11px;
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            padding: 14px 18px;
+            line-height: 1.5;
+            margin: 20px 0
+        }
+
+        @media print {
+            body {
+                background: white
+            }
+
+            .wrap {
+                max-width: none;
+                padding: 0
+            }
+
+            header {
+                background: white;
+                color: #173c68;
+                border-radius: 0;
+                border-bottom: 2px solid #173c68;
+                padding: 0 0 16px;
+                margin-bottom: 25px
+            }
+
+            header p {
+                color: #333
+            }
+
+            nav {
+                display: none
+            }
+
+            section {
+                margin: 25px 0
+            }
+
+            h2 {
+                break-after: avoid
+            }
+
+            .task {
+                padding: 15px 18px;
+                margin: 9px 0
+            }
+
+            pre {
+                background: #f1f5fa;
+                color: #111;
+                white-space: pre-wrap
+            }
+        }
+
+        .solution {
+            margin-top: 18px;
+            border-top: 1px solid #dbe4ef;
+            padding-top: 12px
+        }
+
+        .solution summary {
+            cursor: pointer;
+            display: inline-block;
+            list-style: none;
+            background: #e8f1fc;
+            color: #163b66;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 9px 14px;
+            user-select: none
+        }
+
+        .solution summary::-webkit-details-marker {
+            display: none
+        }
+
+        .solution summary::before {
+            content: '▸';
+            display: inline-block;
+            margin-right: 9px;
+            transition: transform .2s
+        }
+
+        .solution[open] summary::before {
+            transform: rotate(90deg)
+        }
+
+        .solution summary:hover,
+        .solution summary:focus-visible {
+            background: #d5e8fa
+        }
+
+        .solution summary:focus-visible {
+            outline: 2px solid #477db4;
+            outline-offset: 2px
+        }
+
+        .solution pre {
+            margin-top: 13px
+        }
+
+        .condition a {
+            color: #145b9d;
+            overflow-wrap: anywhere
+        }
+
+        .note {
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            border-radius: 11px;
+            padding: 14px 18px;
+            line-height: 1.55;
+            margin: 16px 0
+        }
+		
+		img.capped-img {
+			max-width: 100%;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Pesho.org</h1>
+            <p>C++ · Школа по информатика · 5. клас · Седмица 3</p>
+            <nav>
+				<a href="#hello-pesho">pesho.org</a>
+				<a href="#groups">Групи</a>
+				<a href="#contests">Тренировъчни състезания</a>
+				<a href="#tasks">Задачи</a>
+			</nav>
+        </header>
+
+
+        <section id="hello-pesho">
+            <h2>1. Здр, Pesho!</h2>
+            <div class="explain">
+                <p>
+					В състезателното програмиране много често ползваме системи, в които решаваме задачи. Те имат редица удобства - най-голямото е, че автоматично проверяват дали решенията ни са верни. В нашите школи често ще използваме една от тях - <a href="https://pesho.org">pesho.org</a>
+				</p>
+				<p>За целта първо трябва да се регистрираме: </p>
+				<img src="./imgs/pesho/home.png" class="capped-img"/>
+				<p>Да въведем правилните данни и (ВАЖНО!) да не ги забравяме, особено паролата: </p>
+				<img src="./imgs/pesho/register.png" class="capped-img"/>
+				<p>След което да влзем в системата с току-що създадения си акаунт.</p>
+				<img src="./imgs/pesho/home-login.png" class="capped-img"/>
+            </div>
+			
+		</section>
+
+        <section id="groups">
+            <h2>2. Групи</h2>
+            <div class="explain">
+				<p>След като влезем в системата, трябва да се присъединим към групата на школата. За целта натискаме следния бутон:</p>
+				<img src="./imgs/pesho/join-group-1.png" class="capped-img"/>
+				<p>Той ни отвежда до следния екран, където трябва да въведем името на групата (виж след картинката), след което да натиснем (с мишката!) бутона "Добави":</p>
+				<img src="./imgs/pesho/join-group-2.png" class="capped-img"/>
+				<p>
+					<ul>
+						<li><b>Ако идвате на школа понеделник:</b> 2026Epon</li>
+						<li><b>Ако идвате на школа вторник:</b> 2026Evt</li>
+						<li><b>Ако идвате на школа петък:</b> 2026Epet</li>
+					</ul>
+				</p>
+				<p>След като успешно се присъедините към групата на школата, трябва да виждате нещо такова:</p>
+				<img src="./imgs/pesho/group-list.png" class="capped-img"/>
+				<p>Сега избираме съответната група и продължаваме напред.</p>
+            </div>
+		</section>
+
+        <section id="contests">
+            <h2>3. Тренировъчни състезания</h2>
+            <div class="explain">
+				<p>След като влезете в групата на школата ще видите списък от тренировъчните състезания, които има в нея. За сега е само едно - за следващите школи ще се появят още.</p>
+				<img src="./imgs/pesho/contest-list.png" class="capped-img"/>
+				<p>Избираме съответното състезание и продължаваме напред.</p>
+            </div>
+		</section>
+
+		<section id="tasks">
+            <h2>4. Задачи</h2>
+            <div class="explain">
+				<p>Самите състезания са просто списък от подбрани задачи.</p>
+				<img src="./imgs/pesho/task-list.png" class="capped-img"/>
+				<p>След като изберете дадена задача виждате нейното условие. При някои от задачите условието е в друг файл и има само линк към него.</p>
+				<img src="./imgs/pesho/task-statement.png" class="capped-img"/>
+				<p>Под условието са опциите за предаване на решение ("submit"). Има два варианта - или да изберете файла, в който сте запазили своя код (.cpp-то), или директно да копирате кода си в полето за текст (след като натиснете "Код"). Преценете кое е по-удобно и ползвайте него.</p>
+				<img src="./imgs/pesho/task-submit.png" class="capped-img"/>
+				<p>След изпращане на решение, системата тества дали то е вярно. Това става като го пуска с няколко скрити за вас тестови примера, като за всеки проверява дали отговорът на вашата програма е верен. След като е готова (което отнема поне няколко секунди) се показва резултатът от всеки тест. </p>
+				<img src="./imgs/pesho/task-feeback.png" class="capped-img"/>
+				<p>"ОК" значи че тестът е преминал успешно.</p>
+				<p>"WA" значи че сте изпечатали грешен отговор - ако го получите, погледнете пак внимателно в какъв формат трябва да е отговорът по условие.</p>
+				<p>"Compilation Failed" значи че програмата ви не е валидна и трябва да си оправите грешките.</p>
+				<p>"runtime error" значи че програмата ви е гръмнала по време на изпълнение - най-вероятно понеже се опитва да дели на 0 или нещо подобно забранено.</p>
+            </div>
+		</section>
+
+
+        
+		<article class="task">
+			<h2>Браво peshoвци!</h2>
+			<div>
+				<p>Сега почваме да решаваме задачите от "тренировъчно 1".</p>
+			</div>
+		</article>
+    </div>
+</body>
+</html>
