@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Школа 5. клас — урок, седмица 5</title>
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+            color: #182639;
+            background: #f4f7fb
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0
+        }
+
+        .wrap {
+            max-width: 940px;
+            margin: auto;
+            padding: 34px 20px 80px
+        }
+
+        header {
+            background: #16355d;
+            color: white;
+            border-radius: 19px;
+            padding: 34px 38px;
+            margin-bottom: 32px
+        }
+
+        h1 {
+            font-size: 2.15rem;
+            line-height: 1.15;
+            margin: 0 0 9px
+        }
+
+        header p {
+            margin: 0;
+            color: #daebff;
+            line-height: 1.5
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        nav a {
+            font-size: .9rem;
+            color: #e8f5ff;
+            text-decoration: none;
+            border: 1px solid #7eabc9;
+            border-radius: 99px;
+            padding: 7px 13px
+        }
+
+        nav a:hover {
+            background: #34577c
+        }
+
+        section {
+            margin: 34px 0 42px
+        }
+
+        h2 {
+            color: #173c68;
+            font-size: 1.55rem;
+            margin: 0 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #c8d9ee
+        }
+
+        h3 {
+            font-size: 1.17rem;
+            margin: 0 0 11px;
+            color: #163b66
+        }
+
+        .intro,
+        .explain {
+            line-height: 1.62;
+            font-size: 1.04rem
+        }
+
+        .explain {
+            background: #e8f1fc;
+            border-left: 4px solid #477db4;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0 22px
+        }
+
+        .explain p {
+            margin: 0 0 10px
+        }
+
+        .explain p:last-child {
+            margin-bottom: 0
+        }
+
+        .explain ul {
+            margin: 8px 0 0;
+            padding-left: 23px
+        }
+
+        .task {
+            background: white;
+            border: 1px solid #dbe4ef;
+            border-radius: 14px;
+            padding: 21px 24px;
+            margin: 12px 0;
+            break-inside: avoid
+        }
+
+        .condition {
+            white-space: pre-wrap;
+            line-height: 1.54;
+            font-size: 1.01rem
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            background: #f0f4fa;
+            border-radius: 4px;
+            padding: 1px 5px
+        }
+
+        pre {
+            background: #142b46;
+            color: #eef7ff;
+            padding: 13px 17px;
+            border-radius: 9px;
+            overflow: auto;
+            margin: 12px 0 2px;
+            line-height: 1.55
+        }
+
+        pre code {
+            background: none;
+            padding: 0
+        }
+
+        .callout {
+            border-radius: 11px;
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            padding: 14px 18px;
+            line-height: 1.5;
+            margin: 20px 0
+        }
+
+        @media print {
+            body {
+                background: white
+            }
+
+            .wrap {
+                max-width: none;
+                padding: 0
+            }
+
+            header {
+                background: white;
+                color: #173c68;
+                border-radius: 0;
+                border-bottom: 2px solid #173c68;
+                padding: 0 0 16px;
+                margin-bottom: 25px
+            }
+
+            header p {
+                color: #333
+            }
+
+            nav {
+                display: none
+            }
+
+            section {
+                margin: 25px 0
+            }
+
+            h2 {
+                break-after: avoid
+            }
+
+            .task {
+                padding: 15px 18px;
+                margin: 9px 0
+            }
+
+            pre {
+                background: #f1f5fa;
+                color: #111;
+                white-space: pre-wrap
+            }
+        }
+
+        .solution {
+            margin-top: 18px;
+            border-top: 1px solid #dbe4ef;
+            padding-top: 12px
+        }
+
+        .solution summary {
+            cursor: pointer;
+            display: inline-block;
+            list-style: none;
+            background: #e8f1fc;
+            color: #163b66;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 9px 14px;
+            user-select: none
+        }
+
+        .solution summary::-webkit-details-marker {
+            display: none
+        }
+
+        .solution summary::before {
+            content: '▸';
+            display: inline-block;
+            margin-right: 9px;
+            transition: transform .2s
+        }
+
+        .solution[open] summary::before {
+            transform: rotate(90deg)
+        }
+
+        .solution summary:hover,
+        .solution summary:focus-visible {
+            background: #d5e8fa
+        }
+
+        .solution summary:focus-visible {
+            outline: 2px solid #477db4;
+            outline-offset: 2px
+        }
+
+        .solution pre {
+            margin-top: 13px
+        }
+
+        .condition a {
+            color: #145b9d;
+            overflow-wrap: anywhere
+        }
+
+        .note {
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            border-radius: 11px;
+            padding: 14px 18px;
+            line-height: 1.55;
+            margin: 16px 0
+        }
+		
+		img.capped-img {
+			max-width: 100%;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Else + тренировъчно 2</h1>
+            <p>C++ · Школа по информатика · 5. клас · Седмица 5</p>
+            <nav>
+				<a href="#else">else</a>
+				<a href="#contest">Тренировъчно 2</a>
+			</nav>
+        </header>
+
+        <section id="else">
+            <h2>1. Else</h2>
+            <div class="explain">
+				<p>Досега, когато искахме да проверим дали дадено условие е изпълнено, използвахме if.</p>
+				<p>Например, нека имаме три числа <code>x</code>, <code>y</code> и <code>z</code>. Искаме да проверим дали и трите числа се делят на 3.
+				Можем да запишем:</p>
+<pre><code>if (x % 3 == 0 &amp;&amp; y % 3 == 0 &amp;&amp; z % 3 == 0) {
+    cout &lt;&lt; "da";
+}
+if (x % 3 != 0 || y % 3 != 0 || z % 3 != 0) {
+    cout &lt;&lt; "ne";
+}</code></pre>
+				<br>
+				<p>Тук правим две отделни проверки:
+					<br>
+					<ul>
+						<li>първата проверява дали и трите числа се делят на 3</li>
+						<li>втората проверява дали поне едно от числата не се дели на 3</li>
+					</ul>
+				</p>
+				
+				<p>Доста често се налага да пишем подобен код - да прави едно нещо понякога и друго нещо в другите случаи (иначе). В C++ за удобство има командата <code>else</code>, която ни позволява да не пишем обратното условие на ръка всеки път.<p>
+
+<pre><code>if (x % 3 == 0 &amp;&amp; y % 3 == 0 &amp;&amp; z % 3 == 0) {
+    cout &lt;&lt; "da";
+}
+else {
+    cout &lt;&lt; "ne";
+}</code></pre>
+				<br>
+				<p><code>else</code> означава "в противен случай".</p>
+
+				<p>Тоест програмата по-горе работи така:
+					<ul>
+						<li>Ако и трите числа се делят на 3 -> извеждаме "da".</li>
+						<li>В противен случай -> извеждаме "ne".</li>
+					</ul>
+				</p>
+				
+				<p>Така кодът става по-кратък, по-ясен и не правим излишна проверка.</p>
+
+				Общ вид
+<pre><code>if (&lt;условие&gt;) {
+    cout &lt;&lt; "izpulnqva se, ako uslovieto e vqrno";
+}
+else {
+    cout &lt;&lt; "izpulnqva se, ako uslovieto e greshno";
+}</code></pre>
+				<br>
+				Ясно е, че за да ползваме <code>else</code> трябва преди него да има <code>if</code>. Също така за всеки <code>if</code> може да има най-много един <code>else</code>.
+
+
+				<p>Можем например да решим <a href="03_theory.html#task2-3" target="_blank">задача 2.3 от седмица 3</a> по следния начин, използвайки <code>else</code> за удобство.</p>
+				<details class="solution">
+                    <summary>Покажи решение</summary>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int kuftetaIma, gladnost, kebabchetaIma, naDietaLiSum;
+    cin &gt;&gt; gladnost &gt;&gt; kuftetaIma &gt;&gt; kebabchetaIma &gt;&gt; naDietaLiSum;
+    if(naDietaLiSum == 0) {
+        if(kuftetaIma + kebabchetaIma * 2 &gt;= gladnost) {
+            cout &lt;&lt; &quot;Da, shte se naqdesh i shte si ostanesh debel&quot;;
+        }
+        else {
+            cout &lt;&lt; &quot;Ne, shte si ostanash gladen&quot;;
+        }
+    }
+    else {
+        if(kuftetaIma + kebabchetaIma * 2 &gt;= gladnost / 2) {
+            cout &lt;&lt; &quot;Da, shte se naqdesh i shte si ostanesh debel, dori da si na dieta&quot;;
+        }
+        else {
+            cout &lt;&lt; &quot;Ne, shte si ostanash gladen, zashtoto si na dieta&quot;;
+        }
+    }
+    return 0;
+}</code></pre>
+                </details>
+            </div>
+		</section>
+
+        <section id="contest">
+            <h2>2. Тренировъчно 2</h2>
+            <div class="explain">
+                <p>
+					Сега ще решаваме тренировъчно 2 в <a href="https://pesho.org" target="_blank">pesho.org</a>.
+				</p>
+				<img src="./imgs/pesho/contest-list-2.png" class="capped-img"/>
+            </div>
+		</section>
+    </div>
+</body>
+</html>
