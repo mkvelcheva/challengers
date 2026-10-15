@@ -34,3 +34,10 @@ lessons:
       - theory
       - homework
 
+  - number: "05"
+    date: "19 октомври"
+    title: "Else + тренировъчно 2"
+    resources:
+      - theory
+      - homework
+
