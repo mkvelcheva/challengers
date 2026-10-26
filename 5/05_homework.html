@@ -279,6 +279,55 @@
                             <div>
 								Дорешете си задачите от "тренировъчно 2".
 							</div>
+							<div class="task">
+								Решение на задача <b>sweets</b> (ако много сте забили на нея).
+								<details class="solution">
+									<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int k, e;
+    int razlika, novBroi;
+    int broiKutii2_1 = 0, broiKutii1_2 = 0;
+    cin &gt;&gt; k &gt;&gt; e;
+
+    if((k + e) % 3 != 0)
+    {
+        cout &lt;&lt; -1;
+    }
+    else
+    {
+        if(2 * k &lt; e || 2 * e &lt; k)
+        {
+            cout &lt;&lt; -1;
+        }
+        else
+        {
+            if(k &gt; e)
+            {
+                razlika = k - e;
+                novBroi = e - razlika;
+                broiKutii2_1 = razlika + novBroi / 3;
+                broiKutii1_2 = novBroi / 3;
+                cout &lt;&lt; broiKutii2_1 &lt;&lt; &quot; &quot; &lt;&lt; broiKutii1_2;
+            }
+            else
+            {
+                razlika = e - k;
+                novBroi = k - razlika;
+                broiKutii2_1 = novBroi / 3;
+                broiKutii1_2 = razlika + novBroi / 3;
+                cout &lt;&lt; broiKutii2_1 &lt;&lt; &quot; &quot; &lt;&lt; broiKutii1_2;
+            }
+        }
+    }
+
+    return 0;
+}</code></pre>
+								</details>
+								
+							</div>
                         </article>
                     </section>
                 </div>
