@@ -41,3 +41,9 @@ lessons:
       - theory
       - homework
 
+  - number: "06"
+    date: "26 октомври"
+    title: "Тренировъчно 3"
+    resources:
+      - theory
+      - homework
