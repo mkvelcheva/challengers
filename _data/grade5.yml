@@ -47,3 +47,10 @@ lessons:
     resources:
       - theory
       - homework
+
+  - number: "07"
+    date: "02 ноември"
+    title: "Цикъл while"
+    resources:
+      - theory
+      - homework

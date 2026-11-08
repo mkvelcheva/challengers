@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Школа 5. клас — урок, седмица 7</title>
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+            color: #182639;
+            background: #f4f7fb
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0
+        }
+
+        .wrap {
+            max-width: 940px;
+            margin: auto;
+            padding: 34px 20px 80px
+        }
+
+        header {
+            background: #16355d;
+            color: white;
+            border-radius: 19px;
+            padding: 34px 38px;
+            margin-bottom: 32px
+        }
+
+        h1 {
+            font-size: 2.15rem;
+            line-height: 1.15;
+            margin: 0 0 9px
+        }
+
+        header p {
+            margin: 0;
+            color: #daebff;
+            line-height: 1.5
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        nav a {
+            font-size: .9rem;
+            color: #e8f5ff;
+            text-decoration: none;
+            border: 1px solid #7eabc9;
+            border-radius: 99px;
+            padding: 7px 13px
+        }
+
+        nav a:hover {
+            background: #34577c
+        }
+
+        section {
+            margin: 34px 0 42px
+        }
+
+        h2 {
+            color: #173c68;
+            font-size: 1.55rem;
+            margin: 0 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #c8d9ee
+        }
+
+        h3 {
+            font-size: 1.17rem;
+            margin: 0 0 11px;
+            color: #163b66
+        }
+
+        .intro,
+        .explain {
+            line-height: 1.62;
+            font-size: 1.04rem
+        }
+
+        .explain {
+            background: #e8f1fc;
+            border-left: 4px solid #477db4;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0 22px
+        }
+
+        .explain p {
+            margin: 0 0 10px
+        }
+
+        .explain p:last-child {
+            margin-bottom: 0
+        }
+
+        .explain ul {
+            margin: 8px 0 0;
+            padding-left: 23px
+        }
+
+        .task {
+            background: white;
+            border: 1px solid #dbe4ef;
+            border-radius: 14px;
+            padding: 21px 24px;
+            margin: 12px 0;
+            break-inside: avoid
+        }
+
+        .condition {
+            white-space: pre-wrap;
+            line-height: 1.54;
+            font-size: 1.01rem
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            background: #f0f4fa;
+            border-radius: 4px;
+            padding: 1px 5px
+        }
+
+        pre {
+            background: #142b46;
+            color: #eef7ff;
+            padding: 13px 17px;
+            border-radius: 9px;
+            overflow: auto;
+            margin: 12px 0 2px;
+            line-height: 1.55
+        }
+
+        pre code {
+            background: none;
+            padding: 0
+        }
+
+        .callout {
+            border-radius: 11px;
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            padding: 14px 18px;
+            line-height: 1.5;
+            margin: 20px 0
+        }
+
+        @media print {
+            body {
+                background: white
+            }
+
+            .wrap {
+                max-width: none;
+                padding: 0
+            }
+
+            header {
+                background: white;
+                color: #173c68;
+                border-radius: 0;
+                border-bottom: 2px solid #173c68;
+                padding: 0 0 16px;
+                margin-bottom: 25px
+            }
+
+            header p {
+                color: #333
+            }
+
+            nav {
+                display: none
+            }
+
+            section {
+                margin: 25px 0
+            }
+
+            h2 {
+                break-after: avoid
+            }
+
+            .task {
+                padding: 15px 18px;
+                margin: 9px 0
+            }
+
+            pre {
+                background: #f1f5fa;
+                color: #111;
+                white-space: pre-wrap
+            }
+        }
+
+        .solution {
+            margin-top: 18px;
+            border-top: 1px solid #dbe4ef;
+            padding-top: 12px
+        }
+
+        .solution summary {
+            cursor: pointer;
+            display: inline-block;
+            list-style: none;
+            background: #e8f1fc;
+            color: #163b66;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 9px 14px;
+            user-select: none
+        }
+
+        .solution summary::-webkit-details-marker {
+            display: none
+        }
+
+        .solution summary::before {
+            content: '▸';
+            display: inline-block;
+            margin-right: 9px;
+            transition: transform .2s
+        }
+
+        .solution[open] summary::before {
+            transform: rotate(90deg)
+        }
+
+        .solution summary:hover,
+        .solution summary:focus-visible {
+            background: #d5e8fa
+        }
+
+        .solution summary:focus-visible {
+            outline: 2px solid #477db4;
+            outline-offset: 2px
+        }
+
+        .solution pre {
+            margin-top: 13px
+        }
+
+        .condition a {
+            color: #145b9d;
+            overflow-wrap: anywhere
+        }
+
+        .note {
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            border-radius: 11px;
+            padding: 14px 18px;
+            line-height: 1.55;
+            margin: 16px 0
+        }
+		
+		img.capped-img {
+			max-width: 100%;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Цикъл while</h1>
+            <p>C++ · Школа по информатика · 5. клас · Седмица 7</p>
+            <nav>
+				<a href="#while">while</a>
+				<a href="#infinite">Безкрайни цикли</a>
+				<a href="#examples-1">Примери I</a>
+				<a href="#exercises-1">Упражнения I</a>
+				<a href="#examples-2">Примери II</a>
+				<a href="#exercises-2">Упражнения II</a>
+			</nav>
+        </header>
+
+        <section id="while">
+            <h2>1. Цикъл while - основна идея</h2>
+            <div class="explain">
+				Нека разгледаме следната задача и се опитаме да я решим със знанията си до момента (<code>if/else</code>):
+            </div>
+			<article class="task">
+				<h3>Задача 1</h3>
+				<div>
+					<p>Изпечетайте линия с X звездички (X &lt;= 10).</p>
+					<p>
+						вход:
+						<br>
+						10
+						<br>
+						изход:
+						<br>
+						**********
+					</p>
+					<p>
+						вход:
+						<br>
+						7
+						<br>
+						изход:
+						<br>
+						*******
+					</p>
+				</div>
+			</article>
+            <div class="explain">
+				<p>Едно възможно решение изглежда по следния начин:</p>
+				<details class="solution">
+					<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int brZvezdiZaOtpechatvane;
+    cin &gt;&gt; brZvezdiZaOtpechatvane;
+
+    int brOtpechataniZvezdi = 0;
+
+    if(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+    {
+        cout &lt;&lt; &quot;*&quot;;
+        brOtpechataniZvezdi = brOtpechataniZvezdi + 1;
+    }
+    if(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+    {
+        cout &lt;&lt; &quot;*&quot;;
+        brOtpechataniZvezdi = brOtpechataniZvezdi + 1;
+    }
+    if(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+    {
+        cout &lt;&lt; &quot;*&quot;;
+        brOtpechataniZvezdi = brOtpechataniZvezdi + 1;
+    }
+    if(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+    {
+        cout &lt;&lt; &quot;*&quot;;
+        brOtpechataniZvezdi = brOtpechataniZvezdi + 1;
+    }
+    if(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+    {
+        cout &lt;&lt; &quot;*&quot;;
+        brOtpechataniZvezdi = brOtpechataniZvezdi + 1;
+    }
+    if(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+    {
+        cout &lt;&lt; &quot;*&quot;;
+        brOtpechataniZvezdi = brOtpechataniZvezdi + 1;
+    }
+    if(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+    {
+        cout &lt;&lt; &quot;*&quot;;
+        brOtpechataniZvezdi = brOtpechataniZvezdi + 1;
+    }
+    if(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+    {
+        cout &lt;&lt; &quot;*&quot;;
+        brOtpechataniZvezdi = brOtpechataniZvezdi + 1;
+    }
+    if(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+    {
+        cout &lt;&lt; &quot;*&quot;;
+        brOtpechataniZvezdi = brOtpechataniZvezdi + 1;
+    }
+    if(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+    {
+        cout &lt;&lt; &quot;*&quot;;
+        brOtpechataniZvezdi = brOtpechataniZvezdi + 1;
+    }
+
+    return 0;
+}</code></pre>
+				</details>
+				<p>
+					В горния код идеята е следната - във всеки момент знаем (чрез променливата <code>brOtpechataniZvezdi</code>) колко звезди сме отпечатили до момента. Десет пъти повтаряме следното: ако не сме отпечатили всички нужни звезди (тоест <code>brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane</code>), отпечатваме една и увеличаваме броя на отпечатаните с едно.
+				</p>
+				<p>
+					Лесно се забелязва, че програмата ще изпълни точно толкова от <code>if</code>-овете, колкото е въведената стойност (която по условие е не по-голяма от 10). Как обаче да решим задачата, при по-големи ограничения - например X &lt;= 1000? Очевидно не е добре да пишем хиляди <code>if</code>-ове.
+				</p>
+            </div>
+            <div class="explain">
+				<p>
+					Това, което ще използваме за да решим задачата по по-хитър  и лесен начин са тъй наречените <b>цикли</b>. Най-простият от тях е цикълът <code>while</code>. В общия случай той изглежда по следния начин - много подобно на <code>if</code>:
+				</p>
+<pre><code>while(&lt;условие&gt;) {
+    &lt;код за изпълнение, ако условието е вярно&gt;
+} 
+</code></pre>
+				<p>
+					Разликата с <code>if</code> е че след като тялото на <code>while</code>-а се изпълни, не се продължава на реда след него, ами програмта се <b>връща обратно до самия <code>while</code> и проверява пак условието.</b> Ако то все още е вярно, пак се изпълнява тялото и т.н. <b>докато</b> (това значи <code>while</code> на английски) евентуално условието не стане грешно.
+				</p>
+				<p>
+					Използвайки <code>while</code> можем да решим задачата по следния начин:
+				</p>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int brZvezdiZaOtpechatvane;
+    cin &gt;&gt; brZvezdiZaOtpechatvane;
+
+    int brOtpechataniZvezdi = 0;
+    while(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+    {
+        cout &lt;&lt; &quot;*&quot;;
+        brOtpechataniZvezdi = brOtpechataniZvezdi + 1;
+    }
+
+    return 0;
+}</code></pre>
+				<p>
+					Логиката на решението е абсолютно аналогична на тази на предишното, но този път няма нужда да копираме един и същи <code>if</code> много пъти и програмата работи за произволно големи стойности.
+				</p>
+			</div>
+            <div class="explain">
+                <p>
+					Винаги когато искаме да направим нещо много на брой пъти ще го правим така (или с някой от другите цикли, за които ще учим по-нататък). Ще имаме броячна променлива (например <code>tekushtaStupka</code>), започваща от 0, която на всяко изпълнение (стъпка) на <code>while</code>-а ще увеличаваме. Самият цикъл ще се изпълнява докато не стигнем искания брой изпълнения (например <code>obshtoStupki</code>) - тоест условието на <code>while</code>-а ще е <code>tekushtaStupka &lt; obshtoStupki</code>. 
+				</p>
+            </div>
+		</section>
+
+        <section id="infinite">
+            <h2>2. Безкрайни цикли</h2>
+			<div class="explain">
+				<p>
+					Как изобщо обаче условието на <code>while</code> би се нарушило в някакъв момент от време? Със сигурност трябва нещо да се промени в самото тяло на цикъла (например стойността на някоя променлива), в противен случай няма как условието да бъде нарушено. Ако условието никога не се наруши, програмата продължава да изпълнява тялото на цикъла до безкрай. Много често програмистите правят тази грешка - да забравят например да увеличават брояча на цикъла - и пишат безкрайни цикли.
+				</p>
+				<p>
+					Например ако в примерната задача отгоре изпуснем да увеличаваме брояча на цикъла, то ще получим безкраен цикъл, който никога няма да спре да изпечатва звезди на екрана:
+				</p>
+<pre><code>...
+int brOtpechataniZvezdi = 0;
+while(brOtpechataniZvezdi &lt; brZvezdiZaOtpechatvane)
+{
+    cout &lt;&lt; &quot;*&quot;;
+}
+...</code></pre>
+				<p>
+					Много често при стигане до безкраен цикъл програмата изглежда "забила" - сякаш чака да се въведе нещо, но не позволява.
+				</p>
+				<p>
+					Ако на състезание без да искаме направим безкраен цикъл, системата ще ни покаже като резултат <b>TL</b> (Time limit), тоест че програмата ни е отнела твърде много време, и няма да ни даде точки на съответния тест.
+				</p>
+			</div>
+		</section>
+		
+        <section id="examples-1">
+            <h2>3. Задачи с решения I</h2>
+			
+			<article class="task">
+				<h3>Задача 2</h3>
+				<div>
+					<p>Изпечатайте числата по-малки от n, които се делят на 3 (n &lt;= 10000).</p>
+					
+					<p>
+						вход:
+						<br>
+						40
+						<br>
+						изход:
+						<br>
+						3 6 9 12 15 18 21 24 27 30 33 36 39
+					</p>
+				</div>
+				<details class="solution">
+					<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int n;
+    cin &gt;&gt; n;
+
+    int kratnoNa3 = 3;
+    while(kratnoNa3 &lt; n)
+    {
+        cout &lt;&lt; kratnoNa3 &lt;&lt; &quot; &quot;;
+        kratnoNa3 = kratnoNa3 + 3;
+    }
+
+    return 0;
+}</code></pre>
+				</details>
+			</article>
+
+			<article class="task">
+				<h3>Задача 3</h3>
+				<div>
+					<p>Изведете числата от 1 до n в обратен ред (n &lt;= 10000).</p>
+					
+					<p>
+						вход:
+						<br>
+						8
+						<br>
+						изход:
+						<br>
+						8 7 6 5 4 3 2 1
+					</p>
+				</div>
+				<details class="solution">
+					<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int n;
+    cin &gt;&gt; n;
+
+    int tekushtaStoinost = n;
+    while(tekushtaStoinost &gt; 0)
+    {
+        cout &lt;&lt; tekushtaStoinost &lt;&lt; &quot; &quot;;
+        tekushtaStoinost = tekushtaStoinost - 1;
+    }
+
+    return 0;
+}</code></pre>
+				</details>
+			</article>
+
+			<article class="task">
+				<h3>Задача 3.1</h3>
+				<div>
+					<p>Изведете числата от x до y (x, y &lt;= 10000). Не е задължително x &lt;= y!</p>
+					
+					<p>
+						вход:
+						<br>
+						3 7
+						<br>
+						изход:
+						<br>
+						3 4 5 6 7
+					</p>
+					<p>
+						вход:
+						<br>
+						8 2
+						<br>
+						изход:
+						<br>
+						8 7 6 5 4 3 2
+					</p>
+				</div>
+				<details class="solution">
+					<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int x, y;
+    int tekushtaStoinost;
+    cin &gt;&gt; x &gt;&gt; y;
+
+    if(x &lt; y)
+    {
+        tekushtaStoinost = x;
+        while(tekushtaStoinost &lt;= y)
+        {
+            cout &lt;&lt; tekushtaStoinost &lt;&lt; &quot; &quot;;
+            tekushtaStoinost = tekushtaStoinost + 1;
+        }
+    }
+    else
+    {
+        tekushtaStoinost = x;
+        while(tekushtaStoinost &gt;= y)
+        {
+            cout &lt;&lt; tekushtaStoinost &lt;&lt; &quot; &quot;;
+            tekushtaStoinost = tekushtaStoinost - 1;
+        }
+    }
+
+    return 0;
+}</code></pre>
+				</details>
+			</article>
+		</section>
+
+        <section id="exercises-1">
+            <h2>4. Задачи за упражнение I</h2>
+			<article class="task">
+				<h3>Задача 1.1</h3>
+				<div>
+					<p>Изпечатайте линия с x на брой символа z (x &lt;= 10000).</p>
+					
+					<p>
+						вход:
+						<br>
+						8 #
+						<br>
+						изход:
+						<br>
+						########
+					</p>
+				</div>
+			</article>
+			<article class="task">
+				<h3>Задача 2.1</h3>
+				<div>
+					<p>Изпечатайте числата по-малки от n, които се делят на k (n, k &lt;= 10000).</p>
+					
+					<p>
+						вход:
+						<br>
+						40 7
+						<br>
+						изход:
+						<br>
+						7 14 21 28 35
+					</p>
+				</div>
+			</article>
+			<article class="task">
+				<h3>Задача 3.2</h3>
+				<div>
+					<p>Изведете числата от x до y в обратен ред (x, y &lt;= 10000). Не е задължително x &lt;= y!</p>
+					
+					<p>
+						вход:
+						<br>
+						3 7
+						<br>
+						изход:
+						<br>
+						7 6 5 4 3
+					</p>
+					<p>
+						вход:
+						<br>
+						8 2
+						<br>
+						изход:
+						<br>
+						2 3 4 5 6 7 8
+					</p>
+				</div>
+			</article>
+			<article class="task">
+				<h3>Задача 3.3</h3>
+				<div>
+					<p>Изведете числата от x до y, които се делят на три. Изведете ги в обратен ред. (x &lt;= y &lt;= 10000)</p>
+					
+					<p>
+						вход:
+						<br>
+						3 17
+						<br>
+						изход:
+						<br>
+						15 12 9 6 3
+					</p>
+				</div>
+			</article>
+			<article class="task">
+				<h3>Задача 3.4</h3>
+				<div>
+					<p>Изведете числата от x до y, които се делят на k. Изведете ги в обратен ред. (x &lt;= y &lt;= 10000, k != 0)</p>
+					
+					<p>
+						вход:
+						<br>
+						10 30 7
+						<br>
+						изход:
+						<br>
+						28 21 14
+					</p>
+				</div>
+			</article>
+		</section>
+
+        <section id="examples-2">
+            <h2>5. Задачи с решения II</h2>
+			<article class="task">
+				<h3>Задача 4</h3>
+				<div>
+					<p>Отпечатайте главните букви от латиницата.</p>
+				</div>
+				<details class="solution">
+					<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    char glavnaBukva = 'A';
+    while(glavnaBukva &lt;= 'Z')
+    {
+        cout &lt;&lt; glavnaBukva;
+        glavnaBukva = glavnaBukva + 1;
+    }
+
+    cout &lt;&lt; &quot;\n&quot;;
+    return 0;
+}</code></pre>
+				</details>
+			</article>
+			<article class="task">
+				<h3>Задача 5</h3>
+				<div>
+					<p>За всяко от числата от x до y, изведи '.', ако се дели на 2, 'х' ако се дели на 3 или '-' ако се дели и на двете (нищо в противен случай). (x &lt;= y &lt;= 10000)</p>
+					
+					<p>
+						вход:
+						<br>
+						7 17
+						<br>
+						изход:
+						<br>
+						.x.-.x.
+						<br>
+						<br>
+						пояснение: 7-нищо, 8-точка, 9-точка, 10-точка, 11-нищо и т.н.
+					</p>
+				</div>
+				<details class="solution">
+					<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int ot, doo;
+    cin &gt;&gt; ot &gt;&gt; doo;
+
+    int tekushto = ot;
+    while(tekushto &lt;= doo)
+    {
+        if(tekushto % 2 == 0 && tekushto % 3 != 0)
+        {
+            cout &lt;&lt; &quot;.&quot;;
+        }
+        if(tekushto % 2 != 0 && tekushto % 3 == 0)
+        {
+            cout &lt;&lt; &quot;x&quot;;
+        }
+        if(tekushto % 2 == 0 && tekushto % 3 == 0)
+        {
+            cout &lt;&lt; &quot;-&quot;;
+        }
+
+        tekushto = tekushto + 1;
+    }
+
+    cout &lt;&lt; &quot;\n&quot;;
+    return 0;
+}</code></pre>
+				</details>
+			</article>
+		</section>
+
+        <section id="exercises-2">
+            <h2>6. Задачи за упражнение II</h2>
+			<article class="task">
+				<h3>Задача 4.1</h3>
+				<div>
+					<p>Изведете буквите от 'c' до 'х'</p>
+				</div>
+			</article>
+			<article class="task">
+				<h3>Задача 5.1</h3>
+				<div>
+					<p>За всяко от числата от x до y, изведи '.', ако се дели на a, 'х' ако се дели на b или '-' ако се дели и на двете (нищо в противен случай).  (x &lt;= y &lt;= 10000, a != 0, b != 0)</p>
+					
+					<p>
+						вход:
+						<br>
+						7 17 2 3
+						<br>
+						изход:
+						<br>
+						.x.-.x.
+					</p>
+				</div>
+			</article>
+		</section>
+    </div>
+</body>
+</html>
