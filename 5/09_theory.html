@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Школа 5. клас — урок, седмица 9</title>
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+            color: #182639;
+            background: #f4f7fb
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0
+        }
+
+        .wrap {
+            max-width: 940px;
+            margin: auto;
+            padding: 34px 20px 80px
+        }
+
+        header {
+            background: #16355d;
+            color: white;
+            border-radius: 19px;
+            padding: 34px 38px;
+            margin-bottom: 32px
+        }
+
+        h1 {
+            font-size: 2.15rem;
+            line-height: 1.15;
+            margin: 0 0 9px
+        }
+
+        header p {
+            margin: 0;
+            color: #daebff;
+            line-height: 1.5
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        nav a {
+            font-size: .9rem;
+            color: #e8f5ff;
+            text-decoration: none;
+            border: 1px solid #7eabc9;
+            border-radius: 99px;
+            padding: 7px 13px
+        }
+
+        nav a:hover {
+            background: #34577c
+        }
+
+        section {
+            margin: 34px 0 42px
+        }
+
+        h2 {
+            color: #173c68;
+            font-size: 1.55rem;
+            margin: 0 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #c8d9ee
+        }
+
+        h3 {
+            font-size: 1.17rem;
+            margin: 0 0 11px;
+            color: #163b66
+        }
+
+        .intro,
+        .explain {
+            line-height: 1.62;
+            font-size: 1.04rem
+        }
+
+        .explain {
+            background: #e8f1fc;
+            border-left: 4px solid #477db4;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0 22px
+        }
+
+        .explain p {
+            margin: 0 0 10px
+        }
+
+        .explain p:last-child {
+            margin-bottom: 0
+        }
+
+        .explain ul {
+            margin: 8px 0 0;
+            padding-left: 23px
+        }
+
+        .task {
+            background: white;
+            border: 1px solid #dbe4ef;
+            border-radius: 14px;
+            padding: 21px 24px;
+            margin: 12px 0;
+            break-inside: avoid
+        }
+
+        .condition {
+            white-space: pre-wrap;
+            line-height: 1.54;
+            font-size: 1.01rem
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            background: #f0f4fa;
+            border-radius: 4px;
+            padding: 1px 5px
+        }
+
+        pre {
+            background: #142b46;
+            color: #eef7ff;
+            padding: 13px 17px;
+            border-radius: 9px;
+            overflow: auto;
+            margin: 12px 0 2px;
+            line-height: 1.55
+        }
+
+        pre code {
+            background: none;
+            padding: 0
+        }
+
+        .callout {
+            border-radius: 11px;
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            padding: 14px 18px;
+            line-height: 1.5;
+            margin: 20px 0
+        }
+
+        @media print {
+            body {
+                background: white
+            }
+
+            .wrap {
+                max-width: none;
+                padding: 0
+            }
+
+            header {
+                background: white;
+                color: #173c68;
+                border-radius: 0;
+                border-bottom: 2px solid #173c68;
+                padding: 0 0 16px;
+                margin-bottom: 25px
+            }
+
+            header p {
+                color: #333
+            }
+
+            nav {
+                display: none
+            }
+
+            section {
+                margin: 25px 0
+            }
+
+            h2 {
+                break-after: avoid
+            }
+
+            .task {
+                padding: 15px 18px;
+                margin: 9px 0
+            }
+
+            pre {
+                background: #f1f5fa;
+                color: #111;
+                white-space: pre-wrap
+            }
+        }
+
+        .solution {
+            margin-top: 18px;
+            border-top: 1px solid #dbe4ef;
+            padding-top: 12px
+        }
+
+        .solution summary {
+            cursor: pointer;
+            display: inline-block;
+            list-style: none;
+            background: #e8f1fc;
+            color: #163b66;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 9px 14px;
+            user-select: none
+        }
+
+        .solution summary::-webkit-details-marker {
+            display: none
+        }
+
+        .solution summary::before {
+            content: '▸';
+            display: inline-block;
+            margin-right: 9px;
+            transition: transform .2s
+        }
+
+        .solution[open] summary::before {
+            transform: rotate(90deg)
+        }
+
+        .solution summary:hover,
+        .solution summary:focus-visible {
+            background: #d5e8fa
+        }
+
+        .solution summary:focus-visible {
+            outline: 2px solid #477db4;
+            outline-offset: 2px
+        }
+
+        .solution pre {
+            margin-top: 13px
+        }
+
+        .condition a {
+            color: #145b9d;
+            overflow-wrap: anywhere
+        }
+
+        .note {
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            border-radius: 11px;
+            padding: 14px 18px;
+            line-height: 1.55;
+            margin: 16px 0
+        }
+		
+		img.capped-img {
+			max-width: 100%;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Тренировъчно 4</h1>
+            <p>C++ · Школа по информатика · 5. клас · Седмица 9</p>
+            <nav>
+				<a href="#contest">Тренировъчно 4</a>
+				<a href="#cat">Cat</a>
+				<a href="#gloves">Gloves</a>
+				<a href="#vcd">VCD</a>
+				<a href="#boeing">Boeing</a>
+				<a href="#clock">Clock</a>
+				<a href="#cups">Cups</a>
+			</nav>
+        </header>
+
+        <section id="contest">
+            <h2>1. Тренировъчно 4</h2>
+            <div class="explain">
+                <p>
+					Решаваме тренировъчно 4 в <a href="https://pesho.org" target="_blank">pesho.org</a>.
+				</p>
+				<img src="./imgs/pesho/contest-list-4.png" class="capped-img"/>
+            </div>
+		</section>
+
+        <section id="hints">
+            <h2>2. Подсказки по задачите</h2>
+			
+            <div class="explain">
+                <p>
+					В случай, че се опитате дълго време да решите някоя от задачите и все пак не успеете може да погледнете част от следните подсказки. Не четете всички наведнъж, ами след всяка се опитайте само с нея да решите задачата до край.
+				</p>
+            </div>
+			
+            <div class="explain" id="cat">
+				<h3>Задача Cat</h3>
+				<details class="solution">
+					<summary>Подсказка 1</summary>
+					<p>
+						Преобразвуайте стойностите в най-удбоната мерна единица, извършете сметките в нея, и след това преобразувайте наобратно при извеждане.
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 2</summary>
+					<p>
+						Помислите какво още трябва да изведете за да изглежда "добре", когато отговорът е малка стойност.
+					</p>
+				</details>
+            </div>
+			
+            <div class="explain" id="gloves">
+				<h3>Задача Gloves</h3>
+				<details class="solution">
+					<summary>Подсказка 1</summary>
+					<p>
+						Ако съставим редица, в която участва поне едно дете от тип ББ или ЧЧ, има ли смисъл да не участват всички от съответния тип?
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 2</summary>
+					<p>
+						Кога е възможно да съставим редица, в която участват деца от тип ББ и ЧЧ? Какво трябва да седи между тях?
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 3</summary>
+					<p>
+						Можем да поставим всички ББ отляво и всички ЧЧ отдясно (като между тях поставим поне едно дете от тип БЧ) или наобратно - ЧЧ отляво, ББ отдясно с дете ЧБ между тях.
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 4</summary>
+					<p>
+						Ако можем да поставим и ББ децата, и ЧЧ децата - колко най-много деца може да поставим между тях? Помислете как ще се редуват децата в средната част на редицата.
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 5</summary>
+					<p>
+						Ако използваме всички ББ и ЧЧ деца, като посредата сложим възможно най-много редуващи се БЧ и ЧБ деца, има ли как да остане още някое свободно, което да поставим в началото или в края на редицата?
+					</p>
+				</details>
+            </div>
+			
+            <div class="explain" id="vcd">
+				<h3>Задача VCD</h3>
+				<details class="solution">
+					<summary>Подсказка 1</summary>
+					<p>
+						Преобразвуайте стойностите в най-удбоната мерна единица, извършете сметките в нея, и след това преобразувайте наобратно при извеждане.
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 2</summary>
+					<p>
+						Намерете времето, в което е готов всеки от тримата, след което вземете максималното от трите и го преобразувайте във формата за извеждане.
+					</p>
+				</details>
+            </div>
+			
+            <div class="explain" id="boeing">
+				<h3>Задача Boeing</h3>
+				<details class="solution">
+					<summary>Подсказка 1</summary>
+					<p>
+						Кога трябва да изведем "full"?
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 2</summary>
+					<p>
+						Представете си че редовете и колоните са номерирани от 0 - редовете да са от 0 до 20, вместо от 1 до 21, а колоните от 0 до 5, вместо от А до F.
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 3</summary>
+					<p>
+						Представете си за момент, че няма "липсващи" места и няма резервирано място. Как да намерим реда и колоната на някое място, ако знаем кое поред е? Как да намерим кое поред е дадено място, знаейки реда и колоната му?
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 4</summary>
+					<p>
+						Как можем хитро да съобразим че първите 3 седалки (1A, 1B, 1C) липсват? Не може ли просто да се преструваме, че ги има, но са закупени? Как лесно да го симулираме, променяйки N?
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 5</summary>
+					<p>
+						Как да разберем дали резервираното място е сред първите N и ако да какво да направим с N, така че да го отразим?
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 6</summary>
+					<p>
+						Как да съобразим дали липсващите седалки на последния ред влияят или не на отговора? Ако да - как го променят?
+					</p>
+				</details>
+            </div>
+			
+            <div class="explain" id="clock">
+				<h3>Задача Clock</h3>
+				<details class="solution">
+					<summary>Подсказка 1</summary>
+					<p>
+						Погледенте картинката - как да разберем колко часа би било, ако на мястото на стрелката на минутите беше стрелката на часовете?
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 2</summary>
+					<p>
+						А как да разберем колко минути биха били минали от началото на часа?
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 3</summary>
+					<p>
+						Когато разберете колко часа и колко минути би било ако преместите стрелките - за да намерите разликата, която се иска - преобразвуайте стойностите в най-удбоната мерна единица, извършете сметките в нея, и след това преобразувайте наобратно при извеждане.
+					</p>
+				</details>
+            </div>
+			
+            <div class="explain" id="cups">
+				<h3>Задача Cups</h3>
+				<details class="solution">
+					<summary>Подсказка 1</summary>
+					<p>
+						Ако изобщо е възможно да поставим някоя чаша в друга, какво би било изпълнено за техните външни диаметри?
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 2</summary>
+					<p>
+						Наредете трите чаши по големина на външните им диаметри и проверете дали е възможно да поставите някоя от по-малките в някоя от по-големите.
+					</p>
+				</details>
+				<details class="solution">
+					<summary>Подсказка 3</summary>
+					<p>
+						Разгледайте всички възможни случаи - поставяне на всички една в друга, на малките 2 една до друга, вътре в най-голямата, и случаите в които е възможно да поберете само една от чашите в друга по-голяма.
+					</p>
+				</details>
+            </div>
+		</section>
+    </div>
+</body>
+</html>
