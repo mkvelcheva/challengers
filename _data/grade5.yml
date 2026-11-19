@@ -54,3 +54,17 @@ lessons:
     resources:
       - theory
       - homework
+
+  - number: "08"
+    date: "09 ноември"
+    title: "UNDER CONSTRUCTION, пробвай по-късно"
+    resources:
+      - theory
+      - homework
+
+  - number: "09"
+    date: "16 ноември"
+    title: "Тренировъчно 4"
+    resources:
+      - theory
+      - homework
