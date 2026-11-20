@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Школа 5. клас — урок, седмица 8</title>
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+            color: #182639;
+            background: #f4f7fb
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0
+        }
+
+        .wrap {
+            max-width: 940px;
+            margin: auto;
+            padding: 34px 20px 80px
+        }
+
+        header {
+            background: #16355d;
+            color: white;
+            border-radius: 19px;
+            padding: 34px 38px;
+            margin-bottom: 32px
+        }
+
+        h1 {
+            font-size: 2.15rem;
+            line-height: 1.15;
+            margin: 0 0 9px
+        }
+
+        header p {
+            margin: 0;
+            color: #daebff;
+            line-height: 1.5
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        nav a {
+            font-size: .9rem;
+            color: #e8f5ff;
+            text-decoration: none;
+            border: 1px solid #7eabc9;
+            border-radius: 99px;
+            padding: 7px 13px
+        }
+
+        nav a:hover {
+            background: #34577c
+        }
+
+        section {
+            margin: 34px 0 42px
+        }
+
+        h2 {
+            color: #173c68;
+            font-size: 1.55rem;
+            margin: 0 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #c8d9ee
+        }
+
+        h3 {
+            font-size: 1.17rem;
+            margin: 0 0 11px;
+            color: #163b66
+        }
+
+        .intro,
+        .explain {
+            line-height: 1.62;
+            font-size: 1.04rem
+        }
+
+        .explain {
+            background: #e8f1fc;
+            border-left: 4px solid #477db4;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0 22px
+        }
+
+        .explain p {
+            margin: 0 0 10px
+        }
+
+        .explain p:last-child {
+            margin-bottom: 0
+        }
+
+        .explain ul {
+            margin: 8px 0 0;
+            padding-left: 23px
+        }
+
+        .task {
+            background: white;
+            border: 1px solid #dbe4ef;
+            border-radius: 14px;
+            padding: 21px 24px;
+            margin: 12px 0;
+            break-inside: avoid
+        }
+
+        .condition {
+            white-space: pre-wrap;
+            line-height: 1.54;
+            font-size: 1.01rem
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            background: #f0f4fa;
+            border-radius: 4px;
+            padding: 1px 5px
+        }
+
+        pre {
+            background: #142b46;
+            color: #eef7ff;
+            padding: 13px 17px;
+            border-radius: 9px;
+            overflow: auto;
+            margin: 12px 0 2px;
+            line-height: 1.55
+        }
+
+        pre code {
+            background: none;
+            padding: 0
+        }
+
+        .callout {
+            border-radius: 11px;
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            padding: 14px 18px;
+            line-height: 1.5;
+            margin: 20px 0
+        }
+
+        @media print {
+            body {
+                background: white
+            }
+
+            .wrap {
+                max-width: none;
+                padding: 0
+            }
+
+            header {
+                background: white;
+                color: #173c68;
+                border-radius: 0;
+                border-bottom: 2px solid #173c68;
+                padding: 0 0 16px;
+                margin-bottom: 25px
+            }
+
+            header p {
+                color: #333
+            }
+
+            nav {
+                display: none
+            }
+
+            section {
+                margin: 25px 0
+            }
+
+            h2 {
+                break-after: avoid
+            }
+
+            .task {
+                padding: 15px 18px;
+                margin: 9px 0
+            }
+
+            pre {
+                background: #f1f5fa;
+                color: #111;
+                white-space: pre-wrap
+            }
+        }
+
+        .solution {
+            margin-top: 18px;
+            border-top: 1px solid #dbe4ef;
+            padding-top: 12px
+        }
+
+        .solution summary {
+            cursor: pointer;
+            display: inline-block;
+            list-style: none;
+            background: #e8f1fc;
+            color: #163b66;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 9px 14px;
+            user-select: none
+        }
+
+        .solution summary::-webkit-details-marker {
+            display: none
+        }
+
+        .solution summary::before {
+            content: '▸';
+            display: inline-block;
+            margin-right: 9px;
+            transition: transform .2s
+        }
+
+        .solution[open] summary::before {
+            transform: rotate(90deg)
+        }
+
+        .solution summary:hover,
+        .solution summary:focus-visible {
+            background: #d5e8fa
+        }
+
+        .solution summary:focus-visible {
+            outline: 2px solid #477db4;
+            outline-offset: 2px
+        }
+
+        .solution pre {
+            margin-top: 13px
+        }
+
+        .condition a {
+            color: #145b9d;
+            overflow-wrap: anywhere
+        }
+
+        .note {
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            border-radius: 11px;
+            padding: 14px 18px;
+            line-height: 1.55;
+            margin: 16px 0
+        }
+		
+		img.capped-img {
+			max-width: 100%;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Отделяне на цифри, степенуване, делители и прости числа</h1>
+            <p>C++ · Школа по информатика · 5. клас · Седмица 8</p>
+            <nav>
+				<a href="#digits">Отделяне на цифри</a>
+				<a href="#powers">Степенуване</a>
+				<a href="#divisors">Делители</a>
+				<a href="#prime-slow">Прости числа</a>
+				<a href="#prime-fast"><b>Бърза проверка за просто число</b></a>
+				<a href="#TODO">TODO</a>
+				<a href="#TODO">TODO</a>
+				<a href="#TODO">TODO</a>
+			</nav>
+        </header>
+
+        <section id="digits">
+            <h2>1. Отделяне на цифри</h2>
+            <div class="explain">
+				<p>
+					В предишните теми имаше много задачи, в които се искаше да работим с цифрите на многоцифрени числа. За целта се научихме как да отделяме последната цифра на число - това беше остатъкът при деление на 10 на числото - и как да я "изтриваме" за да получим останалата част от числото - това беше числото разделено на 10 (и закръглено надолу).
+				</p>
+				<p>
+					До сега обаче винаги числата имаха някакъв фиксиран брой цифри - напрмер 3 или 4 - и за това кодът ни отделяше цифра точно толкова пъти. Как обаче да направим същото, ако не знаем колко цифри има числото? Ще го правим с <code>while</code>.
+				</p>
+				<p>
+					На всяка стъпка ще отделяме текущата последна цифра (<code>% 10</code>) на числото, ще правим каквото трябва с нея за задачата, след което ще я "трием" (<code>/ 10</code>) за следващата стъпка. Ще продължаваме така докато не "изтрием" всички цифри от числото - тоест докато то не стане равно на 0.
+				</p>
+<pre><code>int x, digit;
+cin >> x;
+while(x &gt; 0) {
+    digit = x % 10;
+    &lt;правим каквото трябва с цифрата&gt;
+    x = x / 10;
+} 
+</code></pre>
+            </div>
+			<article class="task">
+				<h3>Задача 1</h3>
+				<div>
+					<p>Въвежда се число X (0 &lt; X &lt; 10<sup>18</sup>). Изведете цифрите му в обратен ред.</p>
+					<p>
+						вход:
+						<br>
+						1287421987
+						<br>
+						изход:
+						<br>
+						7 8 9 1 2 4 7 8 2 1
+					</p>
+				</div>
+				
+				<details class="solution">
+					<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    long long x;
+    int digit;
+    cin &gt;&gt; x;
+
+    while(x &gt; 0)
+    {
+        digit = x % 10;
+        cout &lt;&lt; digit &lt;&lt; &quot; &quot;;
+        x = x / 10;
+    }
+
+    return 0;
+}</code></pre>
+				</details>
+			</article>
+			
+			<article class="task">
+				<h3>Задача 1.1</h3>
+				<div>
+					<p>Въвежда се число X (0 &lt; X &lt; 10<sup>18</sup>). Изведете броя на цифрите му.</p>
+					<p>
+						вход:
+						<br>
+						1245124
+						<br>
+						изход:
+						<br>
+						7
+					</p>
+				</div>
+			</article>
+			
+			<article class="task">
+				<h3>Задача 2</h3>
+				<div>
+					<p>Въвежда се число X (0 &lt; X &lt; 10<sup>18</sup>). Изведете броя на срещанията на цифрата 1 в него.</p>
+					<p>
+						вход:
+						<br>
+						12311121212
+						<br>
+						изход:
+						<br>
+						6
+					</p>
+				</div>
+			</article>
+			
+			<article class="task">	
+				<h3>Задача 3</h3>
+				<div>
+					<p>Въвежда се число X (0 &lt; X &lt; 10<sup>18</sup>). Изведете разликата между сборовете на цифрите на четните и нечетните позиции.</p>
+					<p>Позициите ще ги броим от 0 и от дясно наляво, тоест позицията на единиците ще е "позиция 0", десетиците ще са "позиция 1" и т.н. - по този начин сметките ни ще са по-удобни.</p>
+					<p>
+						вход:
+						<br>
+						12345231
+						<br>
+						изход:
+						<br>
+						-3
+						<br>
+						Пояснение: 
+						<br>
+						Цифрите на четните позиции са на единиците, стотитиците и т.н.: 1 + 2 + 4 + 2 = 9
+						<br>
+						Цифрите на нечетните позиции са на десетиците, хилядите и т.н.: 3 + 5 + 3 + 1 = 12
+					</p>
+				</div>
+				
+				<details class="solution">
+					<summary>Подсказка</summary>
+					<p>Направете променлива, която да следи коя поред е текущата позиция, до която сте стигнали. Чрез нея определяйте какво да правите със съответната цифра на числото.
+					</p>
+				</details>
+				
+				<details class="solution">
+					<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    long long x;
+    int digit, position = 0;
+    int sumOdd = 0, sumEven = 0;
+    cin &gt;&gt; x;
+
+    while(x &gt; 0)
+    {
+        digit = x % 10;
+        if(position % 2 == 0)
+        {
+            sumEven = sumEven + digit;
+        }
+        else
+        {
+            sumOdd = sumOdd + digit;
+        }
+
+        x = x / 10;
+        position = position + 1;
+    }
+
+    cout &lt;&lt; sumEven - sumOdd;
+    return 0;
+}</code></pre>
+				</details>
+				
+			</article>
+		</section>
+
+        <section id="powers">
+            <h2>2. Степенуване</h2>
+			<div class="explain">
+				<p>
+					До сега няколко пъти говорихме за математическата операция "степенуване". Тя не е нищо сложно и представлява просто <b>многократно умножение</b> на нещо по себе си - подобно на умножението, което е <b>многократно събиране</b> на нещо със себе си.
+				</p>
+				<p>
+					В математиката пишем A<sup>B</sup> и четем "A на степен B". Например 2<sup>3</sup> (2 на степен 3), 5<sup>7</sup> (5 на степен 7) и 10<sup>18</sup> (10 на степен 18). Стойността на A<sup>B</sup> е просто A умножено по себе си B пъти:
+					<br>
+					2<sup>3</sup> = 2 * 2 * 2 = 8
+					<br>
+					5<sup>7</sup> = 5 * 5 * 5 * 5 * 5 * 5 * 5 = 78125
+					<br>
+					10<sup>18</sup> = 10 * ... * 10 (18 пъти) = 1000000000000000000
+				</p>
+				<p>
+					Специален случай е когато B е 0. Тогава приемаме, че резултатът е 1.
+					<br>
+					A<sup>0</sup> = 1
+				</p>
+				<p>
+					Понеже в текстови файлове често не можем да пишем A<sup>B</sup> по технически причини, доста често ще пишем A^B имайки предвид А на степен B.
+				</p>
+				<p>
+					За щастие <b>в C++ няма вградена операцията степенуване</b>, така че ще ни се налага да я правим сами чрез цикли и умножения. Имайте предвид, че <code>a^b</code> в C++ значи нещо тотално различно (и ще говорим за него след доста време).
+				</p>
+			</div>
+			
+			<article class="task">
+				<h3>Задача 4</h3>
+				<div>
+					<p>Въвеждат се числата A и B. Изведете 2<sup>A</sup> и 3<sup>B</sup> като посочете кое е по-голямото от двете, както е в примерите. A и B са неотрицателни и такива, че 2<sup>A</sup>, 3<sup>B</sup> &lt; 10<sup>18</sup>.</p>
+					<p>
+						вход:
+						<br>
+						11 7
+						<br>
+						изход:
+						<br>
+						2048 &lt; 2187
+					</p>
+					<p>
+						вход:
+						<br>
+						12 7
+						<br>
+						изход:
+						<br>
+						4096 &gt; 2187
+					</p>
+				</div>
+				
+				<details class="solution">
+					<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int a, b;
+    cin &gt;&gt; a &gt;&gt; b;
+
+    long long twoPowA = 1;
+    int step = 0;
+    while(step &lt; a)
+    {
+        twoPowA = twoPowA * 2;
+        step = step + 1;
+    }
+
+    long long threePowB = 1;
+    step = 0;
+    while(step &lt; b)
+    {
+        threePowB = threePowB * 3;
+        step = step + 1;
+    }
+
+    cout &lt;&lt; twoPowA &lt;&lt; &quot; &quot;;
+
+    if(twoPowA &lt; threePowB)
+    {
+        cout &lt;&lt; &quot;&lt;&quot;;
+    }
+    if(twoPowA &gt; threePowB)
+    {
+        cout &lt;&lt; &quot;&gt;&quot;;
+    }
+    if(twoPowA == threePowB)
+    {
+        cout &lt;&lt; &quot;=&quot;;
+    }
+
+    cout &lt;&lt; &quot; &quot; &lt;&lt; threePowB;
+    return 0;
+}</code></pre>
+				</details>
+			</article>
+			
+		</section>
+		
+        <section id="divisors">
+            <h2>3. Намиране на делителите на число</h2>
+			<div class="explain">
+				<p>
+					TODO
+				</p>
+			</div>
+		</section>
+		
+        <section id="prime-slow">
+            <h2>4. Проверка дали число е просто</h2>
+			<div class="explain">
+				<p>
+					TODO
+				</p>
+			</div>
+		</section>
+		
+        <section id="prime-fast">
+            <h2>5. Бърза проверка дали число е просто</h2>
+			<div class="explain">
+				<p>
+					TODO
+				</p>
+			</div>
+		</section>
+    </div>
+</body>
+</html>
