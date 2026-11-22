@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="bg">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Школа 5. клас — урок, седмица 10</title>
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+            color: #182639;
+            background: #f4f7fb
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0
+        }
+
+        .wrap {
+            max-width: 940px;
+            margin: auto;
+            padding: 34px 20px 80px
+        }
+
+        header {
+            background: #16355d;
+            color: white;
+            border-radius: 19px;
+            padding: 34px 38px;
+            margin-bottom: 32px
+        }
+
+        h1 {
+            font-size: 2.15rem;
+            line-height: 1.15;
+            margin: 0 0 9px
+        }
+
+        header p {
+            margin: 0;
+            color: #daebff;
+            line-height: 1.5
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        nav a {
+            font-size: .9rem;
+            color: #e8f5ff;
+            text-decoration: none;
+            border: 1px solid #7eabc9;
+            border-radius: 99px;
+            padding: 7px 13px
+        }
+
+        nav a:hover {
+            background: #34577c
+        }
+
+        section {
+            margin: 34px 0 42px
+        }
+
+        h2 {
+            color: #173c68;
+            font-size: 1.55rem;
+            margin: 0 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #c8d9ee
+        }
+
+        h3 {
+            font-size: 1.17rem;
+            margin: 0 0 11px;
+            color: #163b66
+        }
+
+        .intro,
+        .explain {
+            line-height: 1.62;
+            font-size: 1.04rem
+        }
+
+        .explain {
+            background: #e8f1fc;
+            border-left: 4px solid #477db4;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0 22px
+        }
+
+        .explain p {
+            margin: 0 0 10px
+        }
+
+        .explain p:last-child {
+            margin-bottom: 0
+        }
+
+        .explain ul {
+            margin: 8px 0 0;
+            padding-left: 23px
+        }
+
+        .task {
+            background: white;
+            border: 1px solid #dbe4ef;
+            border-radius: 14px;
+            padding: 21px 24px;
+            margin: 12px 0;
+            break-inside: avoid
+        }
+
+        .condition {
+            white-space: pre-wrap;
+            line-height: 1.54;
+            font-size: 1.01rem
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            background: #f0f4fa;
+            border-radius: 4px;
+            padding: 1px 5px
+        }
+
+        pre {
+            background: #142b46;
+            color: #eef7ff;
+            padding: 13px 17px;
+            border-radius: 9px;
+            overflow: auto;
+            margin: 12px 0 2px;
+            line-height: 1.55
+        }
+
+        pre code {
+            background: none;
+            padding: 0
+        }
+
+        .callout {
+            border-radius: 11px;
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            padding: 14px 18px;
+            line-height: 1.5;
+            margin: 20px 0
+        }
+
+        @media print {
+            body {
+                background: white
+            }
+
+            .wrap {
+                max-width: none;
+                padding: 0
+            }
+
+            header {
+                background: white;
+                color: #173c68;
+                border-radius: 0;
+                border-bottom: 2px solid #173c68;
+                padding: 0 0 16px;
+                margin-bottom: 25px
+            }
+
+            header p {
+                color: #333
+            }
+
+            nav {
+                display: none
+            }
+
+            section {
+                margin: 25px 0
+            }
+
+            h2 {
+                break-after: avoid
+            }
+
+            .task {
+                padding: 15px 18px;
+                margin: 9px 0
+            }
+
+            pre {
+                background: #f1f5fa;
+                color: #111;
+                white-space: pre-wrap
+            }
+        }
+
+        .solution {
+            margin-top: 18px;
+            border-top: 1px solid #dbe4ef;
+            padding-top: 12px
+        }
+
+        .solution summary {
+            cursor: pointer;
+            display: inline-block;
+            list-style: none;
+            background: #e8f1fc;
+            color: #163b66;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 9px 14px;
+            user-select: none
+        }
+
+        .solution summary::-webkit-details-marker {
+            display: none
+        }
+
+        .solution summary::before {
+            content: '▸';
+            display: inline-block;
+            margin-right: 9px;
+            transition: transform .2s
+        }
+
+        .solution[open] summary::before {
+            transform: rotate(90deg)
+        }
+
+        .solution summary:hover,
+        .solution summary:focus-visible {
+            background: #d5e8fa
+        }
+
+        .solution summary:focus-visible {
+            outline: 2px solid #477db4;
+            outline-offset: 2px
+        }
+
+        .solution pre {
+            margin-top: 13px
+        }
+
+        .condition a {
+            color: #145b9d;
+            overflow-wrap: anywhere
+        }
+
+        .note {
+            background: #fff5da;
+            border: 1px solid #ebd392;
+            border-radius: 11px;
+            padding: 14px 18px;
+            line-height: 1.55;
+            margin: 16px 0
+        }
+		
+		img.capped-img {
+			max-width: 100%;
+		}
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+	<h1>Редици</h1>
+	<p>C++ · Школа по информатика · 5. клас · Седмица 10</p>
+	<nav>
+		<a href="#sequences-fixed-length">Редици с дадена дължина</a>
+		<a href="#problems-1">Задачи I</a>
+		<a href="#problems-2">Задачи II</a>
+		<a href="#sequences-last-element">Редици, приключващи с дадена стойност</a>
+	</nav>
+</header>
+
+<section id="sequences-fixed-length">
+	<h2>1. Редици с дадена дължина</h2>
+	<div class="explain">
+		<p>
+			В много от задачите от тук нататък, входът на програмата ни ще е редица от няколко числа и ще се иска да пресметнем нещо от нея.
+		<p>
+		</p>
+			Дължината на редицата (броят елементи в нея) няма да бъде фиксирана по условие както беше до сега, ами ще се въвежда преди самата редица. Например много често входът на програмата ще изглежда по подобен начин:
+		</p>
+<pre><code>Вход:
+7
+1 10 20 30 5 6 7</code></pre>
+		<br>
+		<p>
+			Това, което ще правят нашите програми е първо да въведат броя числа в редицата (най-често ще му казваме <code>N</code>), а след това да направят цикъл с толкова (<code>N</code>) стъпки. На всяка стъпка ще се въвежда поредният елемент на редицата и ще се върши нужната работа с него (която зависи от конкретната задача).
+		</p>
+<pre><code>int n, a;
+cin &gt;&gt; n;
+int step = 0;
+while(step &lt; n)
+{
+	cin &gt;&gt; a;
+	&lt;логика, която обработва a&gt;
+	step = step + 1;
+}</code></pre>
+		<br>
+		<p>
+			Следната задача е основен пример за приложение на горната идея:
+		</p>
+	</div>
+	<article class="task">
+		<h3>Задача 1</h3>
+		<div>
+			<p>Въвежда се число N (0 &lt; N &lt; 10<sup>5</sup>), след което N числа - A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>N</sub> (0 &lt;= A<sub>i</sub> &lt; 10<sup>9</sup>).
+			<br>
+			Изведете сумата на числата: A<sub>1</sub> + A<sub>2</sub> + ... + A<sub>N</sub>.</p>
+			<p>
+				вход:
+				<br>
+				7
+				<br>
+				1 10 20 30 5 6 7
+				<br>
+				изход:
+				<br>
+				79
+			</p>
+			<p>
+				вход:
+				<br>
+				10
+				<br>
+				1 1 2 3 4 100 200 300 400 500
+				<br>
+				изход:
+				<br>
+				1511
+			</p>
+			<p>
+				вход:
+				<br>
+				3
+				<br>
+				999999999 999999999 999999999
+				<br>
+				изход:
+				<br>
+				2999999997
+			</p>
+		</div>
+		
+		<details class="solution">
+			<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int n;
+    cin &gt;&gt; n;
+
+    long long sum = 0;
+    int step = 0;
+    int a;
+    while(step &lt; n)
+    {
+        cin &gt;&gt; a;
+        sum = sum + a;
+        step = step + 1;
+    }
+
+    cout &lt;&lt; sum &lt;&lt; &quot;\n&quot;;
+    return 0;
+}</code></pre>
+		</details>
+	</article>
+	
+	<div class="explain">
+		<p>
+			Забележете че няма значение колко интервали и нови редове има във входа - дори да въведем всички числа на един ред разделени с интервали или пък всяко на отделен ред, <code>cin</code>-овете се изпълняват успешно и всяко от числата се прочита от програмата.
+		</p>
+	</div>
+	
+</section>
+
+<section id="problems-1">
+	<h2>2. Задачи I</h2>
+	
+	<article class="task">
+		<h3>Задача 2</h3>
+		<div>
+			<p>Въвежда се число N (0 &lt; N &lt; 10<sup>5</sup>), след което N числа - A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>N</sub> (0 &lt;= A<sub>i</sub> &lt; 10<sup>9</sup>).
+			<br>
+			Изведете тяхното средноаритметично - тоест сумата им, разделена на броя им (закръглено надолу до цяло число).</p>
+			<p>
+				вход:
+				<br>
+				5
+				<br>
+				1 10 20 30 40
+				<br>
+				изход:
+				<br>
+				20
+			</p>
+			<p>
+				вход:
+				<br>
+				10
+				<br>
+				15 20 30 40 50 101 102 103 104 105
+				<br>
+				изход:
+				<br>
+				67
+			</p>
+			<p>
+				вход:
+				<br>
+				3
+				<br>
+				999999999 999999999 999999999
+				<br>
+				изход:
+				<br>
+				999999999
+			</p>
+		</div>
+	</article>
+	
+	<article class="task">
+		<h3>Задача 3</h3>
+		<div>
+			<p>Въвежда се число N (0 &lt; N &lt; 10<sup>5</sup>), след което N числа - A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>N</sub> (0 &lt;= A<sub>i</sub> &lt; 10<sup>9</sup>).
+			<br>
+			Изведете (на един ред, раделени с интервал) броя на четните и броя на тези, които са по-големи от 5.</p>
+			<p>
+				вход:
+				<br>
+				7
+				<br>
+				1 9 10 2 16 2 2
+				<br>
+				изход:
+				<br>
+				5 3
+			</p>
+			<p>
+				вход:
+				<br>
+				12
+				<br>
+				0 1 2 3 4 5 0 1 2 3 4 5
+				<br>
+				изход:
+				<br>
+				6 0
+			</p>
+			<p>
+				вход:
+				<br>
+				3
+				<br>
+				1 3 5
+				<br>
+				изход:
+				<br>
+				0 0
+			</p>
+		</div>
+	</article>
+	
+	<article class="task">
+		<h3>Задача 4</h3>
+		<div>
+			<p>Въвежда се число N (0 &lt; N &lt; 10<sup>5</sup>), след което N числа - A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>N</sub> (0 &lt;= A<sub>i</sub> &lt; 10<sup>9</sup>).
+			<br>
+			Изведете най-малкото от въведените числа.</p>
+			<p>
+				вход:
+				<br>
+				7
+				<br>
+				11 90 105 2 165 24 23
+				<br>
+				изход:
+				<br>
+				2
+			</p>
+			<p>
+				вход:
+				<br>
+				10
+				<br>
+				9 8 7 6 5 5 6 7 8 9
+				<br>
+				изход:
+				<br>
+				5
+			</p>
+			<p>
+				вход:
+				<br>
+				3
+				<br>
+				1000 1000 1000
+				<br>
+				изход:
+				<br>
+				1000
+			</p>
+		</div>
+		
+		<details class="solution">
+			<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int n;
+    cin &gt;&gt; n;
+
+    int minVal = 1000000000 + 5;
+    int step = 0;
+    int a;
+    while(step &lt; n)
+    {
+        cin &gt;&gt; a;
+
+        if(a &lt; minVal)
+        {
+            minVal = a;
+        }
+
+        step = step + 1;
+    }
+
+    cout &lt;&lt; minVal &lt;&lt; &quot;\n&quot;;
+    return 0;
+}</code></pre>
+		</details>
+	</article>
+
+	<div class="explain">
+		<p>
+			В горното решение на всяка стъпка в променливата <code>minVal</code>пазим кое е най-малкото до момента срещнато число. При всяко въвеждане проверяваме дали току-що въведеното е по-малко от най-малкото до момента и ако да - променяме стойността на <code>minVal</code>.
+		</p>
+		<p>
+			Ползваме и лек "hack" - началната стойност на <code>minVal</code> е по-голяма от ограниченията за въведените числа. По този начин си гарантираме, че още първото въведено ще промени стойността на <code>minVal</code>.
+		</p>
+	</div>
+	
+	<div class="explain">
+		<p>
+			Задача 4 може да се реши и с по-малко код, използвайки вградената в C++ функция <code>min</code>. Тя се ползва по следния начин:
+		</p>
+		<pre><code>min(&lt;израз-1&gt;, &lt;израз-2&gt;)</code></pre>
+		<br>
+		<p>
+			Стойността, която връща е по-малката от двете стойности - на &lt;израз-1&gt; и &lt;израз-2&gt;. Например:
+		</p>
+<pre><code>min(5, 10) == 5
+min(100 * 3, 1000 - 500) == 300
+min(20, 20) == 20
+</code></pre>
+
+		<details class="solution">
+			<summary>Покажи решение на Задача 4 с <code>min</code></summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int n;
+    cin &gt;&gt; n;
+
+    int minVal = 1000000000 + 5;
+    int step = 0;
+    int a;
+    while(step &lt; n)
+    {
+        cin &gt;&gt; a;
+        minVal = min(minVal, a);
+        step = step + 1;
+    }
+
+    cout &lt;&lt; minVal &lt;&lt; &quot;\n&quot;;
+    return 0;
+}</code></pre>
+		</details>
+	</div>
+	
+	<article class="task">
+		<h3>Задача 5</h3>
+		<div>
+			<p>Въвежда се число N (0 &lt; N &lt; 10<sup>5</sup>), след което N числа - A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>N</sub> (0 &lt;= A<sub>i</sub> &lt; 10<sup>9</sup>).
+			<br>
+			Изведете най-малкото от въведените числа и на коя позиция е в редицата (на един ред, разделени с интервал). Ако има няколко позиции на срещане на най-малката стойност - изведете най-лявата от тях.</p>
+			<p>
+				вход:
+				<br>
+				7
+				<br>
+				100 200 5 105 20 60 1000
+				<br>
+				изход:
+				<br>
+				5 3
+			</p>
+			<p>
+				вход:
+				<br>
+				10
+				<br>
+				100 20 100 5 2 15 20 2 100 1000
+				<br>
+				изход:
+				<br>
+				2 5
+			</p>
+			<p>
+				вход:
+				<br>
+				8
+				<br>
+				10 10 10 10 10 10 10 10
+				<br>
+				изход:
+				<br>
+				10 1
+			</p>
+		</div>
+		
+		<details class="solution">
+			<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int n;
+    cin &gt;&gt; n;
+
+    int minVal = 1000000000 + 5;
+    int minStep;
+    int step = 0;
+    int a;
+    while(step &lt; n)
+    {
+        cin &gt;&gt; a;
+
+        if(a &lt; minVal)
+        {
+            minVal = a;
+            minStep = step;
+        }
+
+        step = step + 1;
+    }
+
+    cout &lt;&lt; minVal &lt;&lt; &quot; &quot; &lt;&lt; minStep + 1 &lt;&lt; &quot;\n&quot;;
+    return 0;
+}</code></pre>
+		</details>
+	</article>
+	
+	<div class="explain">
+		Решението е почти същото като на задача 4 - разликата е че освен самата минимална стойност пазим и на коя стъпка сме я срещнали. Забележете че накрая извеждаме стъпката <b>плюс 1</b> понеже броим стъпките от 0, а в условието ги броят от 1.
+	</div>
+</section>
+
+<section id="problems-2">
+	<h2>3. Задачи II</h2>
+
+	<article class="task">
+		<h3>Задача 6</h3>
+		<div>
+			<p>Въвежда се число N (1 &lt; N &lt; 10<sup>5</sup>), след което N числа - A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>N</sub> (0 &lt;= A<sub>i</sub> &lt; 10<sup>9</sup>).
+			<br>
+			Изведете колко "върхове" има в редицата - тоест числа, които са едновременно по-големи от числото в ляво от тях и числото в дясно от тях. Първото и последното не ги броим за върхове.</p>
+			<p>
+				вход:
+				<br>
+				7
+				<br>
+				1 15 10 10 8 100 1
+				<br>
+				изход:
+				<br>
+				2
+			</p>
+			<p>
+				вход:
+				<br>
+				10
+				<br>
+				1 5 1 5 1 5 1 5 1 5
+				<br>
+				изход:
+				<br>
+				4
+			</p>
+			<p>
+				вход:
+				<br>
+				2
+				<br>
+				8 1000
+				<br>
+				изход:
+				<br>
+				0
+			</p>
+		</div>
+		
+		<details class="solution">
+			<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int n;
+    cin &gt;&gt; n;
+
+    int a, prevA, prevPrevA;
+    int countPeaks = 0;
+
+    cin &gt;&gt; a;
+    prevPrevA = a;
+    cin &gt;&gt; a;
+    prevA = a;
+
+    int step = 2;
+    while(step &lt; n)
+    {
+        cin &gt;&gt; a;
+
+        if(prevPrevA &lt; prevA &amp;&amp; prevA &gt; a)
+        {
+            countPeaks = countPeaks + 1;
+        }
+
+        prevPrevA = prevA;
+        prevA = a;
+        step = step + 1;
+    }
+
+    cout &lt;&lt; countPeaks &lt;&lt; &quot;\n&quot;;
+    return 0;
+}</code></pre>
+		</details>
+	</article>
+
+	<div class="explain">
+		<p>
+			В горното решение ползваме следната хитрост - освен стойността, която току-що сме въвели си пазим и предишните две - чрез променливите <code>prevA</code> и <code>prevPrevA</code>. Когато въведем число можем да разберем дали <b>предишното</b> е било "връх". Важно е в края на всяка стъпка на цикъла да променяме стойностите на <code>prevA</code> и <code>prevPrevA</code> за следващата стъпка. За удобство първите две числа четем преди цъкъла (за това почваме цикъла от стъпка 2, а не 0).
+		</p>
+	</div>
+
+	<article class="task">
+		<h3>Задача 7</h3>
+		<div>
+			<p>Въвежда се число N (2 &lt; N &lt; 10<sup>5</sup>), след което N числа - A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>N</sub> (0 &lt;= A<sub>i</sub> &lt; 10<sup>9</sup>).
+			<br>
+			Изведете колко от числата имат равен остатък при деление на 3 с числото преди тях и това на две позиции след тях.</p>
+			<p>
+				вход:
+				<br>
+				10
+				<br>
+				8 11 10 41 15 123 2 6 10 12
+				<br>
+				изход:
+				<br>
+				2
+			</p>
+			<p>
+				вход:
+				<br>
+				10
+				<br>
+				20 20 20 20 20 10 10 10 10 10
+				<br>
+				изход:
+				<br>
+				4
+			</p>
+		</div>
+	</article>
+
+	<article class="task">
+		<h3>Задача 8</h3>
+		<div>
+			<p>Въвежда се число N (0 &lt; N &lt; 10<sup>5</sup>), след което N числа - A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>N</sub> (0 &lt;= A<sub>i</sub> &lt; 10<sup>9</sup>).
+			<br>
+			Изведете колко е дълга най-дългата последователност от еднакви числа и числото, от който е съставена. Ако има няколко такива - изведете информацията за най-лявата.</p>
+			<p>
+				вход:
+				<br>
+				10
+				<br>
+				10 10 20 20 20 30 30 30 20 20
+				<br>
+				изход:
+				<br>
+				3 20
+				<br>
+				пояснение:
+				<br>
+				Първите две 10-ки образуват една последователност, следват три 20-ки, образуващи втора, три 30-ки - трета, и след това още две 20-ки, образуващи четвърта последователност. Най-дълги са втората и третата - избираме по-лявата - дължина 3, числото е 20.
+			</p>
+			<p>
+				вход:
+				<br>
+				5
+				<br>
+				1 2 3 4 5
+				<br>
+				изход:
+				<br>
+				1 1
+			</p>
+			<p>
+				вход:
+				<br>
+				7
+				<br>
+				1 1 1 1 1 1 1
+				<br>
+				изход:
+				<br>
+				7 1
+			</p>
+		</div>
+		
+		<details class="solution">
+			<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int n;
+    cin &gt;&gt; n;
+
+    int a, prevA;
+    cin &gt;&gt; a;
+    prevA = a;
+
+    int maxLength = 1;
+    int maxSeqA = prevA;
+    int currentLength = 1;
+    int step = 1;
+    while(step &lt; n)
+    {
+        cin &gt;&gt; a;
+
+        if(a == prevA)
+        {
+            currentLength = currentLength + 1;
+        }
+        else
+        {
+            if(currentLength &gt; maxLength)
+            {
+                maxLength = currentLength;
+                maxSeqA = prevA;
+            }
+            currentLength = 1;
+        }
+
+        prevA = a;
+        step = step + 1;
+    }
+
+    if(currentLength &gt; maxLength)
+    {
+        maxLength = currentLength;
+        maxSeqA = prevA;
+    }
+
+    cout &lt;&lt; maxLength &lt;&lt; &quot; &quot; &lt;&lt; maxSeqA &lt;&lt; &quot;\n&quot;;
+    return 0;
+}</code></pre>
+		</details>
+	</article>
+
+	<div class="explain">
+		<p>
+			В решението на задача 8 има няколко важни неща, които трябва да съобразим. На всяка стъпка пазим колко е дълга текущата последователност от еднакви числа - ако текущият елемент е равен на предишният, разширяваме я с 1 елемент, иначе започваме нова с дължина 1.
+		</p>
+		<p>
+			Всеки път когато "приключим" последователност от еднакви - проверяваме дали това не е най-дългата до момента, подобно на задача 4. Важно е да не забравим проверката на последната последователност - това трябва да се случи извън цикъла, помислете защо!
+		</p>
+	</div>
+</section>
+
+<section id="sequences-last-element">
+	<h2>4. Редици, приключващи с дадена стойност</h2>
+	<div class="explain">
+		<p>
+			Понякога вместо да ни въвеждат броя елементи предварително ни казват, че редицата завършва когато въведат някаква специална стойност (най-често 0, считаме че не е част от редицата). В такива случаи директно трябва да почнем да въвеждаме елементите и да спрем когато видим тази специална стойност. В общия случай кодът изглежда така:
+		</p>
+	</div>
+<pre><code>int a;
+cin &gt;&gt; a;
+while(a != 0)
+{
+    &lt;логика, която обработва a&gt;
+    cin &gt;&gt; a;
+}</code></pre>
+
+	<article class="task">
+		<h3>Задача 9</h3>
+		<div>
+			<p>Въвеждат ни редица от положителни числа (по-малки от 10<sup>9</sup>), след което въвеждат 0.
+			<br>
+			Изведете броя на четните числа от редицата.</p>
+			<p>
+				вход:
+				<br>
+				1 2 3 4 5 6 7 8 9 10 0
+				<br>
+				изход:
+				<br>
+				5
+			</p>
+			<p>
+				вход:
+				<br>
+				2 3 2 4 2 7 2 2 5 8 5 1 5 5 0
+				<br>
+				изход:
+				<br>
+				7
+			</p>
+			<p>
+				вход:
+				<br>
+				0
+				<br>
+				изход:
+				<br>
+				0
+			</p>
+		</div>
+		
+		<details class="solution">
+			<summary>Покажи решение</summary>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int countEven = 0;
+    int a;
+    cin &gt;&gt; a;
+    while(a != 0)
+    {
+        if(a % 2 == 0)
+        {
+            countEven = countEven + 1;
+        }
+
+        cin &gt;&gt; a;
+    }
+
+    cout &lt;&lt; countEven &lt;&lt; &quot;\n&quot;;
+    return 0;
+}</code></pre>
+		</details>
+	</article>
+
+	<article class="task">
+		<h3>Задача 10</h3>
+		<div>
+			<p>Въвежда се число с много цифри (до 100000 цифри), последвано от символа точка ('.') без интервал между тях. 
+			<br>
+			Изведете "yes" ако числото се дели на 6 и "no" в противен случай.</p>
+			<p>
+				вход:
+				<br>
+				23456765434567654345754567876545674.
+				<br>
+				изход:
+				<br>
+				yes
+			</p>
+			<p>
+				вход:
+				<br>
+				12345678909865432345678909876543456780.
+				<br>
+				изход:
+				<br>
+				no
+			</p>
+		</div>
+		
+		<details class="solution">
+			<summary>Подсказка 1</summary>
+			<div class="explain">
+				Използвайте <code>char</code>, за да четете цифрите на числото една по една.
+			</div>
+		</details>
+		
+		<details class="solution">
+			<summary>Подсказка 2</summary>
+			<div class="explain">
+				Какъв беше признакът за деление на 6? А на 2 и на 3?
+			</div>
+		</details>
+	</article>
+</section>
+
+</div>
+</body>
+</html>

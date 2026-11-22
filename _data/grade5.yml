@@ -68,3 +68,10 @@ lessons:
     resources:
       - theory
       - homework
+
+  - number: "10"
+    date: "23 ноември"
+    title: "Редици"
+    resources:
+      - theory
+      - homework
