@@ -298,6 +298,8 @@
 		border: 1px solid black;
 		border-radius: 12px;
 		border-spacing: 0;
+		margin-bottom: 10px;
+		margin-top: 10px;
 	}
 	
 	.sample-cases th, .sample-cases td {
@@ -339,17 +341,24 @@
 	.sample-header-row .sample-header-empty {
 		min-width: 0px;
 	}
+	
+	.sample-row td:first-child {
+		text-align: center;
+	}
+	
+	.sample-row-hidden {
+		visibility:collapse;
+	}
 
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-	var copyButtons = document.querySelectorAll(".copy-input");
-	console.log(copyButtons);
+	var copyButtons = document.querySelectorAll(".copy-input-button");
+	// console.log(copyButtons);
 	copyButtons.forEach(button => {
 		button.addEventListener("click", e => {
-			console.log(e.target);
-			console.log(e);
+			// console.log(e.target);
 			
 			var button = e.target;
 			var testInput = button?.parentElement?.nextElementSibling?.innerText;
@@ -359,19 +368,63 @@ document.addEventListener("DOMContentLoaded", () => {
 				navigator.clipboard.writeText(testInput);
 			}
 		});
-	})
+	});
+	
+	var hideTestsButtons = document.querySelectorAll(".hide-tests-button");
+	hideTestsButtons.forEach(button => {
+		button.addEventListener("click", e => {
+			// console.log(e.target);
+			
+			var button = e.target;
+			var tbody = button?.parentElement?.parentElement?.parentElement;
+			// console.log(tbody);
+			
+			if(!tbody)
+			{
+				return;
+			}
+			
+			trList = tbody.children;
+			// console.log(trList);
+			
+			if(!trList || trList.length <= 1)
+			{
+				return;
+			}
+			
+			var currHidden = trList[1].classList.contains("sample-row-hidden");
+			// console.log(currHidden);
+			
+			for(var i = 1; i < trList.length; ++i)
+			{
+				if(currHidden)
+				{
+					trList[i].classList.remove("sample-row-hidden");
+				}
+				else
+				{
+					trList[i].classList.add("sample-row-hidden");
+				}
+			}
+			
+			
+			button.innerText = currHidden ? "Покажи тестовете" : "Скрий тестовете";
+		});
+	});
 });
 </script>
 
 			<table class="sample-cases">
 				<tr class="sample-header-row">
-					<th class="sample-header-empty"></th>
+					<th class="sample-header-hide-tests-cell">
+						<button class="hide-tests-button">Скрий тестовете</button>
+					</th>
 					<th>Вход</th>
 					<th>Изход</th>
 				</tr>
 				<tr class="sample-row">
 					<td>
-						<button class="copy-input">копирай</button>
+						<button class="copy-input-button">копирай</button>
 					</td>
 					<td>
 						<div>5</div>
@@ -383,7 +436,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				</tr>
 				<tr class="sample-row">
 					<td>
-						<button class="copy-input">копирай</button>
+						<button class="copy-input-button">копирай</button>
 					</td>
 					<td>
 						<div>10</div>
@@ -395,10 +448,61 @@ document.addEventListener("DOMContentLoaded", () => {
 				</tr>
 				<tr class="sample-row">
 					<td>
-						<button class="copy-input">копирай</button>
+						<button class="copy-input-button">копирай</button>
 					</td>
 					<td>
 						<div>3</div>
+						<div>999999999 999999999 999999999</div>
+					</td>
+					<td>
+						<div>999999999</div>
+					</td>
+				</tr>
+			</table>
+			
+			<table class="sample-cases">
+				<tr class="sample-header-row">
+					<th class="sample-header-hide-tests-cell">
+						<button class="hide-tests-button">Скрий тестовете</button>
+					</th>
+					<th>Вход</th>
+					<th>Изход</th>
+				</tr>
+				<tr class="sample-row">
+					<td>
+						<button class="copy-input-button">копирай</button>
+					</td>
+					<td>
+						<div>5</div>
+						<div>1 10 20 30 40</div>
+						<div>1 10 20 30 40</div>
+						<div>1 10 20 30 40</div>
+						<div>1 10 20 30 40</div>
+					</td>
+					<td>
+						<div>20</div>
+					</td>
+				</tr>
+				<tr class="sample-row">
+					<td>
+						<button class="copy-input-button">копирай</button>
+					</td>
+					<td>
+						<div>10</div>
+					</td>
+					<td>
+						<div>67</div>
+					</td>
+				</tr>
+				<tr class="sample-row">
+					<td>
+						<button class="copy-input-button">копирай</button>
+					</td>
+					<td>
+						<div>3</div>
+						<div>999999999 999999999 999999999</div>
+						<div>999999999 999999999 999999999</div>
+						<div>999999999 999999999 999999999</div>
 						<div>999999999 999999999 999999999</div>
 					</td>
 					<td>
