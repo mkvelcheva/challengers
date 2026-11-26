@@ -291,6 +291,129 @@
 		<h3>Задача TODO</h3>
 		<div>
 			<p>TODO условие</p>
+			
+<style>
+	.sample-cases {
+		max-width: 100%;
+		border: 1px solid black;
+		border-radius: 12px;
+		border-spacing: 0;
+	}
+	
+	.sample-cases th, .sample-cases td {
+		border: 1px solid black;
+		padding: 5px;
+	}
+	
+	.sample-header-row th{
+		background-color: lightblue;
+		min-width: 100px;
+	}
+	
+	.sample-cases tr:first-child th:first-child {
+		border-top-left-radius: 10px;
+	}
+
+	.sample-cases tr:first-child th:last-child {
+		border-top-right-radius: 10px;
+	}
+	
+	.sample-cases tr:last-child td:first-child {
+		border-bottom-left-radius: 10px;
+	}
+
+	.sample-cases tr:last-child td:last-child {
+		border-bottom-right-radius: 10px;
+	}
+	
+	.sample-row div {
+		font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+		word-break: break-all;
+	}
+	
+	.sample-header-row .sample-header-empty {
+		min-width: 0px;
+	}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+	var copyButtons = document.querySelectorAll(".copy-input");
+	console.log(copyButtons);
+	copyButtons.forEach(button => {
+		button.addEventListener("click", e => {
+			console.log(e.target);
+			console.log(e);
+			
+			var button = e.target;
+			var testInput = button?.parentElement?.nextElementSibling?.innerText;
+
+			if(testInput)
+			{
+				navigator.clipboard.writeText(testInput);
+			}
+		});
+	})
+});
+</script>
+
+			<table class="sample-cases">
+				<tr class="sample-header-row">
+					<th class="sample-header-empty"></th>
+					<th>Вход</th>
+					<th>Изход</th>
+				</tr>
+				<tr class="sample-row">
+					<td>
+						<button class="copy-input">копирай</button>
+					</td>
+					<td>
+						<div>5</div>
+						<div>1 10 20 30 40</div>
+					</td>
+					<td>
+						<div>20</div>
+					</td>
+				</tr>
+				<tr class="sample-row">
+					<td>
+						<button class="copy-input">копирай</button>
+					</td>
+					<td>
+						<div>10</div>
+						<div>15 20 30 40 50 101 102 103 104 105 mnoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooogo dulgo ama edin red</div>
+					</td>
+					<td>
+						<div>67</div>
+					</td>
+				</tr>
+				<tr class="sample-row">
+					<td>
+						<button class="copy-input">копирай</button>
+					</td>
+					<td>
+						<div>3</div>
+						<div>999999999 999999999 999999999</div>
+					</td>
+					<td>
+						<div>999999999</div>
+					</td>
+				</tr>
+			</table>
+		
+		</div>
+		
+		<details class="solution">
+			<summary>Покажи решение</summary>
+<pre><code>TODO код (<a target="_blank" style="color: gray;" href="https://emn178.github.io/online-tools/html_encode.html">escape-нат</a>)</code></pre>
+		</details>
+	</article>
+
+	<article class="task">
+		<h3>Задача TODO</h3>
+		<div>
+			<p>TODO условие</p>
 			<p>
 				вход:
 				<br>
